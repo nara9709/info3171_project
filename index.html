@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <ion-icon class="logo" name="leaf-outline"></ion-icon>
+
+    <!-- Title -->
+    <section id="sec-title">
+      <h1 class="title">
+        <span class="titleAnime">organic</span>
+        <span class="titleAnime">skin</span>
+        <span class="titleAnime">care</span>
+        <br />
+        <br />
+        <span class="titleAnime">products</span>
+        <span class="titleAnime">Pattern</span>
+        <span class="titleAnime">Library</span>
+      </h1>
+    </section>
+
+    <!-- Content -->
+    <section id="sec-content">
+      <!-- Content list -->
+      <div class="contentLeft">
+        <ul class="categoryList">
+          <li class="categoryTitle"><h5>General</h5></li>
+          <li class="category" onclick="openPage('typography')">TypoGraphy</li>
+          <li class="category" onclick="openPage('color')">Color</li>
+          <li class="category" onclick="openPage('pagelayout')">Page Layout</li>
+          <li class="category" onclick="openPage('dataVisualization')">
+            Data Visualization
+          </li>
+
+          <li class="categoryTitle"><h5>Elements</h5></li>
+          <li class="category" onclick="openPage('button')">Button</li>
+          <li class="category" onclick="openPage('form')">Form</li>
+          <li class="category" onclick="openPage('notifications')">
+            Notifications
+          </li>
+          <li class="category" onclick="openPage('tables')">Tables</li>
+          <li class="category" onclick="openPage('stat_data')">Stat/Data</li>
+          <li class="category" onclick="openPage('dialogs')">Dialogs</li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="contentRight">
+        <div id="typography" class="contentContainer active">
+          <h1 class="contentTitle">Typography</h1>
+          <!-- Please write your code below this line -->
+          <p>Garam</p>
+        </div>
+
+        <div id="color" class="contentContainer">
+          <h1 class="contentTitle">color</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Nara</p>
+        </div>
+
+        <div id="pagelayout" class="contentContainer">
+          <h1 class="contentTitle">page layout</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Minyoung</p>
+        </div>
+
+        <div id="dataVisualization" class="contentContainer">
+          <h1 class="contentTitle">Data Visualization</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Jay</p>
+        </div>
+
+        <div id="button" class="contentContainer">
+          <h1 class="contentTitle">button</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Eunyeop</p>
+        </div>
+
+        <div id="form" class="contentContainer">
+          <h1 class="contentTitle">form</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Minyoung</p>
+        </div>
+
+        <div id="notifications" class="contentContainer">
+          <h1 class="contentTitle">notifications</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Eunyeop</p>
+        </div>
+
+        <div id="tables" class="contentContainer">
+          <h1 class="contentTitle">tables</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Garam</p>
+        </div>
+
+        <div id="stat_data" class="contentContainer">
+          <h1 class="contentTitle">stat/data</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Jay</p>
+        </div>
+
+        <div id="dialogs" class="contentContainer">
+          <h1 class="contentTitle">dialogs</h1>
+          <!-- Please write your code below this line -->
+
+          <p>Nara</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
