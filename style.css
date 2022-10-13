@@ -1,21 +1,19 @@
 :root {
-    /* Brand color */
+  /* Brand color */
   --main-color: #c8dbbe;
 
   /* Functional colors */
   --sub-black: #241c15;
-  --sub-white:#EFEEEA;
-  --sub-dark-white:#DBD9D2
-  --sub-grey: #403b3b;
-  --sub-light-grey: #8c8c8c;
+  --sub-grey: #332f2f;
+  --sub-cream: #efeeea;
+  --sub-dark-white: #dbd9d2;
+  --sub-warm-grey: #8c8c8c;
   --sub-cool-beige: #b7a9a1;
 
   /* Feedback colors */
-  --fed-pink: #FBCFBD;
-  --fed-green:  #D8EACC;
-  --fed-yellow:  #FBEECA;
-  
-
+  --fed-pink: #fbcfbd;
+  --fed-green: #d8eacc;
+  --fed-yellow: #fbeeca;
 }
 
 body {
@@ -28,15 +26,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #EFEEEA;
+  background-color: #efeeea;
   color: var(--sub-black);
 }
 
 section {
   text-align: center;
-
 }
-
 
 /* Section - Title */
 
@@ -49,8 +45,6 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
   background-color: var(--main-color);
-
-
 }
 
 #sec-title h1 {
@@ -61,9 +55,7 @@ section {
   margin: auto;
   color: white;
   text-align: center;
-
 }
-
 
 .logo {
   width: 80px;
@@ -80,7 +72,6 @@ section {
     transform: scale(1);
   }
 }
-
 
 .titleAnime {
   display: inline-block;
@@ -106,25 +97,24 @@ section {
 }
 
 .titleAnime:nth-child(5) {
-    animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  
-  .titleAnime:nth-child(6) {
-    animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
 
-  .titleAnime:nth-child(7) {
-    animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  
-  .titleAnime:nth-child(8) {
-    animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  
-  .titleAnime:nth-child(9) {
-    animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
+.titleAnime:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
 
+.titleAnime:nth-child(7) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.titleAnime:nth-child(8) {
+  animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.titleAnime:nth-child(9) {
+  animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
 
 @keyframes fade-in {
   100% {
@@ -137,85 +127,148 @@ section {
 /* Categories */
 
 #sec-content {
-    display: flex;
-    width: 80%;
+  display: flex;
+  width: 80%;
 }
 
 .contentLeft {
-width: 30%;
+  width: 30%;
 }
 
 .categoryList {
-    list-style: none;
-    text-align: start;
-    text-transform: uppercase;
+  list-style: none;
+  text-align: start;
+  text-transform: uppercase;
 }
 
 .categoryTitle {
-    font-size: 25px;
-    letter-spacing: 1.2px;
-    margin-top: 50px;
+  font-size: 25px;
+  letter-spacing: 1.2px;
+  margin-top: 50px;
 }
 
 .category {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    padding: 5px;
-    transition: color .1s ease-in-out, box-shadow .3s ease-in-out;
-
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 5px;
+  transition: color 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-
 .category:hover {
-    color: #fff;
-    box-shadow: inset 200px 0 0 0 var(--main-color);
-    cursor: pointer;
-  }
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 var(--main-color);
+  cursor: pointer;
+}
 
-  .category:hover a {
-    color: white;
-  }
-
-
-
-
+.category:hover a {
+  color: white;
+}
 
 /* Content */
 
 .contentRight {
-    width: 80%;
-    text-align: start;
+  width: 80%;
+  text-align: start;
 }
 
 .contentContainer {
-    display: none;
- }
- 
- .active {
-    display: block;
- }
- 
- .contentTitle{
-    text-transform: uppercase;
-    font-size:50px;
-    }
- 
-    /* Content -  Typography */
+  display: none;
+}
 
-    /* Content -  Color */
+.active {
+  display: block;
+}
 
-    /* Content -  Page Layout */
+.contentTitle {
+  text-transform: uppercase;
+  font-size: 50px;
+}
 
-    /* Content -  Data Visualization */
+/* Content -  Typography */
 
-    /* Content -  Button */
+/* Content -  Color */
 
-    /* Content -  Form */
+#color h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
 
-    /* Content -  Notifications */
+.colorCircle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 120px;
+  height: 120px;
+  border: 1px solid var(--sub-cool-beige);
+  border-radius: 50%;
+  text-align: center;
+  margin: 10px;
+}
 
-    /* Content -  Tables */
+.colorCircle p {
+  margin: auto;
+  color: white;
+  font-size: 13px;
+}
 
-    /* Content -  Stat/data */
+.funcColorContainer,
+.fedColorContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-    /* Content -  Dialogs */
+.softGreen {
+  background-color: var(--main-color);
+}
+
+.coolBeige {
+  background-color: var(--sub-cool-beige);
+}
+
+.warmGrey {
+  background-color: var(--sub-warm-grey);
+}
+
+.darkGrey {
+  background-color: var(--sub-grey);
+}
+
+.darkWhite {
+  background-color: var(--sub-dark-white);
+}
+
+.cream {
+  background-color: var(--sub-cream);
+}
+
+.nightBlack {
+  background-color: var(--sub-black);
+}
+
+.softPink {
+  background-color: var(--fed-pink);
+}
+
+.mellowGreen {
+  background-color: var(--fed-green);
+}
+
+.softYellow {
+  background-color: var(--fed-yellow);
+}
+
+/* Content -  Page Layout */
+
+/* Content -  Data Visualization */
+
+/* Content -  Button */
+
+/* Content -  Form */
+
+/* Content -  Notifications */
+
+/* Content -  Tables */
+
+/* Content -  Stat/data */
+
+/* Content -  Dialogs */
