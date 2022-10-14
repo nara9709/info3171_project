@@ -23,7 +23,7 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
     <ion-icon class="logo" name="leaf-outline"></ion-icon>
@@ -202,10 +202,52 @@
         <div id="dialogs" class="contentContainer">
           <h1 class="contentTitle">dialogs</h1>
           <!-- Please write your code below this line -->
+          <p class="dialogContentDesc">
+            We use modals and dialogs for a variety of different purposes
+            throughout the app including forms and verification prompts.
+          </p>
 
-          <p>Nara</p>
+          <div class="exampleContainer">
+            <h3 class="dialogTitle">Example</h3>
+            <button onclick="handleModal('open')">Open Modal window</button>
+          </div>
+
+          <h3 class="dialogTitle">Code Snippet</h3>
+
+          <div class="dialogContainer">
+            <img
+              src="./images/code/dialog_nara.png"
+              alt="dialog code snippet"
+            />
+            <div class="dialogDescContainer">
+              <h3 class="dialogTitle">
+                <ion-icon name="mail-open-outline"></ion-icon>
+                Note
+              </h3>
+              <p class="dialogContentDesc">
+                <code> handleModal()</code> function is triggered by
+                <code>onClick</code> event, and this function need to be passed
+                'open' or 'close' as a parameter to handle to show/hide the
+                modal
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Modal Window -->
+    <div id="modalWindow" class="modalWindow hidden">
+      <h2 class="modalTitle">Are you sure?</h2>
+      <p>This item will be deleted from your cart</p>
+      <div class="modalBtnContainer">
+        <button class="modalDelBtn" onclick="handleModal('close')">
+          Delete
+        </button>
+        <button class="modalCanBtn" onclick="handleModal('close')">
+          Cancel
+        </button>
+      </div>
+    </div>
   </body>
 </html>
