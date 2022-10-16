@@ -1,211 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Ionicons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <ion-icon class="logo" name="leaf-outline"></ion-icon>
+  <script src="main.js"></script>
+</head>
 
-    <!-- Title -->
-    <section id="sec-title">
-      <h1 class="title">
-        <span class="titleAnime">organic</span>
-        <span class="titleAnime">skin</span>
-        <span class="titleAnime">care</span>
-        <br />
-        <br />
-        <span class="titleAnime">products</span>
-        <span class="titleAnime">Pattern</span>
-        <span class="titleAnime">Library</span>
-      </h1>
-    </section>
+<body>
+  <ion-icon class="logo" name="leaf-outline"></ion-icon>
+
+  <!-- Title -->
+  <section id="sec-title">
+    <h1 class="title">
+      <span class="titleAnime">organic</span>
+      <span class="titleAnime">skin</span>
+      <span class="titleAnime">care</span>
+      <br />
+      <br />
+      <span class="titleAnime">products</span>
+      <span class="titleAnime">Pattern</span>
+      <span class="titleAnime">Library</span>
+    </h1>
+  </section>
+
+  <!-- Content -->
+  <section id="sec-content">
+    <!-- Content list -->
+    <div class="contentLeft">
+      <ul class="categoryList">
+        <li class="categoryTitle">
+          <h5>General</h5>
+        </li>
+        <li class="category" onclick="openPage('typography')">TypoGraphy</li>
+        <li class="category" onclick="openPage('color')">Color</li>
+        <li class="category" onclick="openPage('pagelayout')">Page Layout</li>
+        <li class="category" onclick="openPage('dataVisualization')">
+          Data Visualization
+        </li>
+
+        <li class="categoryTitle">
+          <h5>Elements</h5>
+        </li>
+        <li class="category" onclick="openPage('button')">Button</li>
+        <li class="category" onclick="openPage('form')">Form</li>
+        <li class="category" onclick="openPage('notifications')">
+          Notifications
+        </li>
+        <li class="category" onclick="openPage('tables')">Tables</li>
+        <li class="category" onclick="openPage('stat_data')">Stat/Data</li>
+        <li class="category" onclick="openPage('dialogs')">Dialogs</li>
+      </ul>
+    </div>
 
     <!-- Content -->
-    <section id="sec-content">
-      <!-- Content list -->
-      <div class="contentLeft">
-        <ul class="categoryList">
-          <li class="categoryTitle"><h5>General</h5></li>
-          <li class="category" onclick="openPage('typography')">TypoGraphy</li>
-          <li class="category" onclick="openPage('color')">Color</li>
-          <li class="category" onclick="openPage('pagelayout')">Page Layout</li>
-          <li class="category" onclick="openPage('dataVisualization')">
-            Data Visualization
-          </li>
-
-          <li class="categoryTitle"><h5>Elements</h5></li>
-          <li class="category" onclick="openPage('button')">Button</li>
-          <li class="category" onclick="openPage('form')">Form</li>
-          <li class="category" onclick="openPage('notifications')">
-            Notifications
-          </li>
-          <li class="category" onclick="openPage('tables')">Tables</li>
-          <li class="category" onclick="openPage('stat_data')">Stat/Data</li>
-          <li class="category" onclick="openPage('dialogs')">Dialogs</li>
-        </ul>
+    <div class="contentRight">
+      <div id="typography" class="contentContainer active">
+        <h1 class="contentTitle">Typography</h1>
+        <!-- Please write your code below this line -->
+        <p>Garam</p>
       </div>
 
-      <!-- Content -->
-      <div class="contentRight">
-        <div id="typography" class="contentContainer active">
-          <h1 class="contentTitle">Typography</h1>
-          <!-- Please write your code below this line -->
-          <p>Garam</p>
+      <div id="color" class="contentContainer">
+        <h1 class="contentTitle">color</h1>
+        <!-- Please write your code below this line -->
+
+        <h2>Brand color</h2>
+        <span class="colorCircle softGreen">
+          <p>
+            Soft Green <br />
+            #C8DBBE
+          </p>
+        </span>
+
+        <h2>Functional color</h2>
+        <div class="funcColorContainer">
+          <span class="colorCircle nightBlack">
+            <p>
+              Night Black <br />
+              #241C15
+            </p>
+          </span>
+          <span class="colorCircle coolBeige">
+            <p>
+              Cool Beige <br />
+              #B7A9A1
+            </p>
+          </span>
+          <span class="colorCircle warmGrey">
+            <p>
+              Warm Grey <br />
+              #8C8C8C
+            </p>
+          </span>
+          <span class="colorCircle darkGrey">
+            <p>
+              Dark Grey <br />
+              #332F2F
+            </p>
+          </span>
+          <span class="colorCircle darkWhite">
+            <p>
+              Dark White <br />
+              #DBD9D2
+            </p>
+          </span>
+          <span class="colorCircle cream">
+            <p>
+              Cream <br />
+              #EFEEEA
+            </p>
+          </span>
         </div>
 
-        <div id="color" class="contentContainer">
-          <h1 class="contentTitle">color</h1>
-          <!-- Please write your code below this line -->
+        <h2>Feedback color</h2>
+        <div class="fedColorContainer">
+          <span class="colorCircle softPink">
+            <p>
+              Soft Pink <br />
+              #fBCFBD
+            </p>
+          </span>
+          <span class="colorCircle mellowGreen">
+            <p>
+              Mellow Green <br />
+              #D8EACC
+            </p>
+          </span>
+          <span class="colorCircle softYellow">
+            <p>
+              Soft Yellow <br />
+              #fBEECA
+            </p>
+          </span>
+        </div>
+      </div>
 
-          <p>Nara</p>
+      <div id="pagelayout" class="contentContainer">
+        <h1 class="contentTitle">page layout</h1>
+        <!-- Please write your code below this line -->
+        Page layout #1
+        <div class="pl_darkgray small">
+          <p>It is a narrow layout on a Dark Grey(#332F2F) background.</p>
         </div>
 
-        <div id="pagelayout" class="contentContainer">
-          <h1 class="contentTitle">page layout</h1>
-          <!-- Please write your code below this line -->
-          Page layout #1
-          <div class="pl_darkgray small">
-            <p>It is a narrow layout on a Dark Grey(#332F2F) background.</p>
-          </div>
-
-          Page layout #2
-          <div class="pl_darkgray medium">
-            <p>It is a medium layout on a Dark Grey(#332F2F) background.</p>
-          </div>
-
-          <div id="pllarge_darkgray">
-
-          </div>
+        Page layout #2
+        <div class="pl_darkgray medium">
+          <p>It is a medium layout on a Dark Grey(#332F2F) background.</p>
         </div>
 
-        <div id="dataVisualization" class="contentContainer">
-          <h1 class="contentTitle">Data Visualization</h1>
-          <!-- Please write your code below this line -->
+        <div id="pllarge_darkgray">
 
-          <p>Jay</p>
         </div>
+      </div>
 
-        <div id="button" class="contentContainer">
-          <h1 class="contentTitle">button</h1>
-          <!-- Please write your code below this line -->
+      <div id="dataVisualization" class="contentContainer">
+        <h1 class="contentTitle">Data Visualization</h1>
+        <!-- Please write your code below this line -->
 
-          <p>Eunyeop</p>
+        <p>Jay</p>
+      </div>
+
+      <div id="button" class="contentContainer">
+        <h1 class="contentTitle">button</h1>
+        <!-- Please write your code below this line -->
+
+        <p>Eunyeop</p>
+      </div>
+
+      <div id="form" class="contentContainer">
+        <h1 class="contentTitle">form</h1>
+        <!-- Please write your code below this line -->
+        <!--Navigation: Select, Inputs, Checkbox&radio-->
+        <div class="formnav">
+          <ul class="formnav ul">
+            <li><a href="#form_select">Select</a></li>
+            <li><a href="#form_inputs">Inputs</a></li>
+            <li><a href="#form_checkbox">Checkbox &amp; Radio</a></li>
+          </ul>
         </div>
+        <!--Contents-->
+        <div class="formcontainer" id="form_select">
+          <div id="select1">
+            <label for="cate_select">Category Select</label> <br>
+            <table style="width: 600px;">
+              <tr>
+                <td style="padding: 10px; ">
+                  Code example:<br>
+                  <textarea class="textarea_code">
+<select>
+  <option value="">Select Category</option>
+  <option value="1">Facial</option>
+  <option value="2">Body</option>
+  <option value="3">Hair</option>
+  <option value="4">Baby</option>
+</select>
+                  </textarea>
+                </td>
+                <td style="padding: 10px; ">
+                  Example: <br>
+                  <select class="cate_select" name="cate_select" id="cate_select">
+                    <option value="">Select Category</option>
+                    <option value="1">Facial</option>
+                    <option value="2">Body</option>
+                    <option value="3">Hair</option>
+                    <option value="4">Baby</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
 
-        <div id="form" class="contentContainer">
-          <h1 class="contentTitle">form</h1>
-          <!-- Please write your code below this line -->
-          <!--Navigation: Select, Inputs, Checkbox&radio-->
-          <div class="formnav">
-            <ul>
-              <li ><a href="#form_select">Select</a></li>
-              <li><a href="#form_inputs">Inputs</a></li>
-              <li><a href="#form_checkbox">Checkbox &amp; Radio</a></li>
-            </ul>
+          <div id="select2">
+            <label for="day_select">Day Select</label> <br>
+            <table style="width: 600px;">
+              <tr>
+                <td style="padding: 10px; ">
+                  Code example:<br>
+                  <textarea class="textarea_code">
+<select>
+  <option value="">Days</option>
+  <option value="1">Monday</option>
+  <option value="2">Tuesday</option>
+  <option value="3">Wednesday</option>
+  <option value="4">Thursday</option>
+  <option value="5">Friday</option>
+  <option value="6">Saturday</option>
+  <option value="7">Sunday</option>
+</select>
+                  </textarea>
+                </td>
+                <td style="padding: 10px; width:200px;">
+                  Example: <br>
+
+                  <select class="color_select" name="day_select" id="day_select">
+                    <option value="" selected>Days</option>
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                    <option value="6">Saturday</option>
+                    <option value="7">Sunday</option>
+                  </select>
+
+                </td>
+              </tr>
+            </table>
           </div>
-          <!--Contents-->
-          <div class="formcontainer" id="form_select">
-            <div  id="select1" >
-              <label for="cate_select">Category Select:</label>
-              <select name="cate_select" id="cate_select">
-				        <option>Facial</option>
-				        <option>Body</option>
-				        <option>Hair</option>
-				        <option>Baby</option>
-              </select>
-            </div>
-            <div id="select2">
-              <label for="day_select">Day Select:</label>
-              <select name="day_select" id="day_select">
-				        <option>Monday</option>
-				        <option>Tuesday</option>
-				        <option>Wednesday</option>
-				        <option>Thursday</option>
-                <option>Friday</option>
-				        <option>Saturday</option>
-                <option>Sunday</option>
-              </select>
-            </div>
-          </div>
+
           <div id="form_inputs">
             <div>
-              <label for="textfield">Text Field:</label>
+              <label for="textfield">Text Field:</label> <br>
               <input type="text" name="textfield" id="textfield">
             </div>
             <div>
-              <label for="email">Email:</label>
+              <label for="email">Email:</label><br>
               <input type="email" name="email" id="email">
             </div>
             <div>
-              <label for="password">Password:</label>
+              <label for="password">Password:</label><br>
               <input type="password" name="password" id="password">
             </div>
             <div>
-              <label for="url">Url:</label>
+              <label for="url">Url:</label><br>
               <input type="url" name="url" id="url">
             </div>
           </div>
-          <div id="form_checkbox" >
+          <div id="form_checkbox">
             <div>
-            <input type="checkbox" name="checkbox" id="checkbox">
-            <label for="checkbox">Checkbox </label>
-          </div>
-          <div>
-            <input type="radio" name="radio" id="radio" value="radio">
-            <label for="radio">Radio Button </label>
+              <input type="checkbox" name="checkbox" id="checkbox">
+              <label for="checkbox">Checkbox </label>
+            </div>
+            <div>
+              <input type="radio" name="radio" id="radio" value="radio">
+              <label for="radio">Radio Button </label>
             </div>
           </div>
-
-        <div id="notifications" class="contentContainer">
-          <h1 class="contentTitle">notifications</h1>
-          <!-- Please write your code below this line -->
-
-          <p>Eunyeop</p>
-        </div>
-
-        <div id="tables" class="contentContainer">
-          <h1 class="contentTitle">tables</h1>
-          <!-- Please write your code below this line -->
-
-          <p>Garam</p>
-        </div>
-
-        <div id="stat_data" class="contentContainer">
-          <h1 class="contentTitle">stat/data</h1>
-          <!-- Please write your code below this line -->
-
-          <p>Jay</p>
-        </div>
-
-        <div id="dialogs" class="contentContainer">
-          <h1 class="contentTitle">dialogs</h1>
-          <!-- Please write your code below this line -->
-
-          <p>Nara</p>
         </div>
       </div>
-    </section>
-  </body>
+
+      <div id="notifications" class="contentContainer">
+        <h1 class="contentTitle">notifications</h1>
+        <!-- Please write your code below this line -->
+
+        <p>Eunyeop</p>
+      </div>
+
+      <div id="tables" class="contentContainer">
+        <h1 class="contentTitle">tables</h1>
+        <!-- Please write your code below this line -->
+
+        <p>Garam</p>
+      </div>
+
+      <div id="stat_data" class="contentContainer">
+        <h1 class="contentTitle">stat/data</h1>
+        <!-- Please write your code below this line -->
+
+        <p>Jay</p>
+      </div>
+
+      <div id="dialogs" class="contentContainer">
+        <h1 class="contentTitle">dialogs</h1>
+        <!-- Please write your code below this line -->
+
+        <p>Nara</p>
+      </div>
+    </div>
+  </section>
+</body>
+
 </html>
