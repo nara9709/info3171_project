@@ -85,8 +85,19 @@
         <div id="pagelayout" class="contentContainer">
           <h1 class="contentTitle">page layout</h1>
           <!-- Please write your code below this line -->
+          Page layout #1
+          <div class="pl_darkgray small">
+            <p>It is a narrow layout on a Dark Grey(#332F2F) background.</p>
+          </div>
 
-          <p>Minyoung</p>
+          Page layout #2
+          <div class="pl_darkgray medium">
+            <p>It is a medium layout on a Dark Grey(#332F2F) background.</p>
+          </div>
+
+          <div id="pllarge_darkgray">
+
+          </div>
         </div>
 
         <div id="dataVisualization" class="contentContainer">
@@ -109,20 +120,62 @@
           <!--Navigation: Select, Inputs, Checkbox&radio-->
           <div class="formnav">
             <ul>
-              <li><a href="#form_select">Select</a></li>
+              <li ><a href="#form_select">Select</a></li>
               <li><a href="#form_inputs">Inputs</a></li>
               <li><a href="#form_checkbox">Checkbox &amp; Radio</a></li>
             </ul>
           </div>
           <!--Contents-->
-          <div id="form_select" style="height: 1000px">
-            <p>Select</p>
+          <div class="formcontainer" id="form_select">
+            <div  id="select1" >
+              <label for="cate_select">Category Select:</label>
+              <select name="cate_select" id="cate_select">
+				        <option>Facial</option>
+				        <option>Body</option>
+				        <option>Hair</option>
+				        <option>Baby</option>
+              </select>
+            </div>
+            <div id="select2">
+              <label for="day_select">Day Select:</label>
+              <select name="day_select" id="day_select">
+				        <option>Monday</option>
+				        <option>Tuesday</option>
+				        <option>Wednesday</option>
+				        <option>Thursday</option>
+                <option>Friday</option>
+				        <option>Saturday</option>
+                <option>Sunday</option>
+              </select>
+            </div>
           </div>
           <div id="form_inputs">
-            <p>inputs</p>
+            <div>
+              <label for="textfield">Text Field:</label>
+              <input type="text" name="textfield" id="textfield">
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email">
+            </div>
+            <div>
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password">
+            </div>
+            <div>
+              <label for="url">Url:</label>
+              <input type="url" name="url" id="url">
+            </div>
           </div>
           <div id="form_checkbox" >
-            <p>Checkbox</p>
+            <div>
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="checkbox">Checkbox </label>
+          </div>
+          <div>
+            <input type="radio" name="radio" id="radio" value="radio">
+            <label for="radio">Radio Button </label>
+            </div>
           </div>
 
         <div id="notifications" class="contentContainer">

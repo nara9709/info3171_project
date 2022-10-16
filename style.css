@@ -205,6 +205,37 @@ width: 30%;
     /* Content -  Color */
 
     /* Content -  Page Layout */
+    .pl_darkgray {
+      margin: 10px;
+      background-color: #332F2F;
+      padding: 20px;
+      align-items: center;
+      line-height: 1.5;
+      border-radius: 5px;
+    }
+    .pl_darkgray.small {
+      width: 250px;
+    }
+
+    .pl_darkgray.medium {
+      width: 500px;
+    }
+
+    .pl_darkgray.small p{
+      color: #EFEEEA;
+      font-size: small;
+    }
+
+    .pl_darkgray.medium p{
+      color: #EFEEEA;
+      font-size: small;
+    }
+
+    .pl_darkgray.large p{
+      color: #EFEEEA;
+      font-size: medium;
+    }
+
 
     /* Content -  Data Visualization */
 
@@ -230,6 +261,10 @@ width: 30%;
     
     .formnav ul {
       list-style-type: none;
+    }
+
+    .formcontainer {
+      margin: 10px;
     }
     /* Content -  Notifications */
 
