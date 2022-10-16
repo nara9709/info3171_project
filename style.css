@@ -1,4 +1,4 @@
-ul:root {
+:root {
   /* Brand color */
   --main-color: #c8dbbe;
 
@@ -265,26 +265,7 @@ section {
 /* Content -  Button */
 
 /* Content -  Form */
-.formnav {
-  overflow: hidden;
-}
-.formnav a {
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  color: black;
-}
 
-.formnav a:hover {
-  background-color: #DBD9D2;
-  color: black;
-}
-
-.formnav ul {
-  list-style-type: none;
-}
 /* Content -  Notifications */
 
 /* Content -  Tables */
