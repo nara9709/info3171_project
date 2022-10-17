@@ -201,6 +201,289 @@ width: 30%;
     }
  
     /* Content -  Typography */
+    .container-1 {
+      padding: 25px 0;
+      margin: 0 10px 30px 0;
+    }
+    
+    
+    .ul-mg {
+      margin: 10;
+      list-style-type: none;
+    }
+    
+    .ul-mg>li {
+      padding: 20px 0 18px 0;
+    }
+    
+    .portion {
+      width: 100%;
+    }
+    
+    .pgClear {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    
+    .align-right {
+      float: right;
+    }
+    
+    .mg-narrow {
+      margin: 14px 0 30px !important;
+    }
+    
+    .mg-narrow-2 {
+      margin: 50px 0 30px !important;
+    
+    }
+    
+    .heading-lg {
+      font-family: 'Cormorant Garamond';
+      font-size: 3.125rem;
+    }
+    
+    .heading-lg-bold {
+      font-family: 'Cormorant Garamond';
+      font-size: 3.125rem;
+      font-weight: bold;
+    }
+    
+    .heading-md {
+      font-family: 'Cormorant Garamond';
+      font-size: 2.375rem;;
+    }
+    
+    .heading-md-bold {
+      font-family: 'Cormorant Garamond';
+      font-size: 2.375rem;;
+      font-weight: bold;
+    }
+    
+    .heading-small {
+      font-family: 'Cormorant Garamond';
+      font-size: 1.875rem;
+    }
+    
+    .heading-small-bold {
+      font-family: 'Cormorant Garamond';
+      font-size: 1.875rem;
+      font-weight: bold;
+    }
+    
+    .heading-xs {
+      font-family: 'Cormorant Garamond';
+      font-size: 1.5rem;
+    }
+    
+    .heading-xs-i {
+      font-family: 'Cormorant Garamond';
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+    
+    
+    .heading-xs-bold {
+      font-family: 'Cormorant Garamond';
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .heading-xs-bold-i {
+      font-family: 'Cormorant Garamond';
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-style: italic;
+    }
+    
+    
+    .font-info {
+      font-family: Roboto;
+      font-size: 0.875rem;
+      color: #8c8c8c;
+    }
+    
+    .font-use {
+      font-family: Roboto;
+      font-size: 0.875rem;
+      color: #B7A9A1;
+    }
+    
+    
+    .body-lg {
+      font-family: Roboto;
+      font-size: 3.125rem;
+    }
+    
+    .body-lg-m {
+      font-family: Roboto;
+      font-size: 3.125rem;
+      font-weight: 500;
+    }
+    
+    
+    .body-lg-bold {
+      font-family: Roboto;
+      font-size: 3.125rem;
+      font-weight: bold;
+    }
+    
+    .body-lg-bold-i {
+      font-family: Roboto;
+      font-size: 3.125rem;
+      font-weight: bold;
+      font-style: italic;
+    }
+    
+    .body-lg-i {
+      font-family: Roboto;
+      font-size: 3.125rem;
+      font-style: italic;
+    }
+    
+    .body-lg-md {
+      font-family: Roboto;
+      font-size: 3.125rem;
+      font-weight: 500;
+    }
+    
+    .body-lg-md-i {
+      font-family: Roboto;
+      font-size: 3.125rem;
+      font-weight: 500;
+      font-style: italic;
+    }
+    
+    
+    .body-md {
+      font-family: Roboto;
+      font-size: 2.25rem;
+    }
+    
+    .body-md-md {
+      font-family: Roboto;
+      font-size: 2.25rem;
+      font-weight: 500;
+    }
+    
+    
+    .body-md-bold {
+      font-family: Roboto;
+      font-size: 2.25rem;
+      font-weight: bold;
+    }
+    
+    .body-small {
+      font-family: Roboto;
+      font-size: 1.375rem;
+    }
+    
+    .body-small-md {
+      font-family: Roboto;
+      font-size: 1.375rem;
+      font-weight: 500;
+    }
+    
+    .body-small-md-i {
+      font-family: Roboto;
+      font-size: 1.375rem;
+      font-weight: 500;
+      font-style: italic;
+    }
+    
+    
+    .body-small-i {
+      font-family: Roboto;
+      font-size: 1.375rem;
+      font-style: italic;
+    }
+    
+    .body-small-bold-i {
+      font-family: Roboto;
+      font-size: 1.375rem;
+      font-weight: bold;
+      font-style: italic;
+    }
+    
+    .body-small-bold {
+      font-family: Roboto;
+      font-size: 1.375rem;
+      font-weight: bold;
+    }
+    
+    .body-xs {
+      font-family: Roboto;
+      font-size: 1rem;
+    }
+    
+    .body-xs-md {
+      font-family: Roboto;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    
+    .line-list {
+      line-height: 40px;
+    }
+    
+    .line {
+      line-height: 30px;
+    }
+    
+    .note-color {
+      color: #8C8C8C;
+    }
+    
+    
+    .body-xs-bold {
+      font-family: Roboto;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    
+    .grid {
+      padding: 0 1.5rem;
+      display: inline-block;
+      vertical-align: top;
+    }
+    
+    .btweenSpace {
+      width: calc(100% * (5.2 / 12));
+    }
+    
+    .mb2 {
+      margin-bottom: 3rem !important;
+    }
+    
+    .mg-list {
+      margin-top: 5px;
+      margin-bottom: 13px;
+    }
+    
+    .mg-p {
+      margin-bottom: 40px !important;
+    }
+    
+    .mg-t {
+      margin-top: 38px !important;
+    }
+    
+    .fix-position {
+    position: fixed;
+    }
+    
+    .list-style {
+      list-style: none;
+    }
+    
+    .pre-text {
+      margin: 10px 0 !important;
+    }
+    
+    .pre-text2 {
+      margin: 30px 0 0  !important;
+    }
+    
 
     /* Content -  Color */
 
@@ -215,6 +498,145 @@ width: 30%;
     /* Content -  Notifications */
 
     /* Content -  Tables */
+    table.sample-table1 {
+      border-spacing: 0;
+      border-collapse: collapse;
+      background: white;
+      height: 300px;
+      max-width: 800px;
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    
+    .grid img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+    }
+    
+    table.sample-table1 th, td {
+      text-align: left;
+      padding: 15px;
+    }
+    
+    table.sample-table1 thead tr {
+      height: 60px;
+      background: #D8EACC;
+    }
+    
+    
+    table.sample-table1 tbody tr {
+      height: 48px;
+      border-bottom: 1px solid #e2dcc6
+    }
+    
+    table.sample-table2 {
+      border-spacing: 0;
+      border-collapse: collapse;
+      height: 300px;
+      max-width: 800px;
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    table.sample-table2 th, td {
+      text-align: left;
+      padding: 15px;
+    }
+    
+    table.sample-table2 thead tr {
+      height: 60px;
+      background: #332f2f;
+    }
+    
+    
+    table.sample-table2 tbody tr {
+      height: 48px;
+      border-bottom: 1px solid #e2dcc6
+    }
+    
+    .table-color2 {
+      background: #dbd9d2;
+    }
+    
+    td input[type="checkbox"] {
+      width:20px;
+      height:20px;
+      display:inline;
+    }
+    
+    .th-color2 {
+      color: #EFEEEA;
+    }
+    
+    table.sample-table3 {
+      border-spacing: 2;
+      border-collapse: collapse;
+      height: 300px;
+      max-width: 800px;
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    table.sample-table3 th, td {
+      text-align: left;
+      padding: 15px;
+    }
+    
+    table.sample-table3 thead tr {
+      height: 60px;
+    }
+    
+    
+    table.sample-table3 tbody tr {
+      height: 48px;
+      border-bottom: 1px solid #e2dcc6
+    }
+    
+    .table-td3 {
+      background: #fbeeca;
+    }
+    
+    .table-td3-1 {
+      background: #fbcfbd;
+    }
+    
+    .buttonDefault {
+      color: #241C15;
+      font-weight:bolder;
+      border: none;
+      background-color: #b7a9a1;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-right: 30px;
+    }
+    
+    
+    
+    .fixHead thead {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0; /* required */
+    }
+    
+    .fixHead {
+      overflow-y: auto;
+      max-height: 300px;
+    }
+    
+    
+    tr:last-child {
+      border: 0
+    }
+    
+    tbody tr:last-child {
+      border: 0
+    }
+    
 
     /* Content -  Stat/data */
 
