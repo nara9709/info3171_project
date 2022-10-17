@@ -191,21 +191,22 @@
             <li><a href="#form_inputs">Inputs</a></li>
             <li><a href="#form_checkbox">Checkbox &amp; Radio</a></li>
           </ul>
+          <hr>
         </div>
         <!--Contents-->
         <div class="formcontainer" id="form_select">
           <div id="select1">
             <label for="cate_select">Category Select</label> <br>
-            <table style="width: 600px;">
+            <table style="width: 700px; margin-bottom: 30px;">
               <tr>
                 <td style="padding: 10px; ">
                   Code example:<br>
-                  <img src="./images/code/form_select1.png" alt="select code" />
+                  <img class="code_img" src="./images/code/form_select1.png" alt="select code" />
                 </td>
                 <td style="padding: 10px; ">
                   Example: <br>
                   <select class="cate_select" name="cate_select" id="cate_select">
-                    <option value="">Select Category</option>
+                    <option value="0">Select Category</option>
                     <option value="1">Facial</option>
                     <option value="2">Body</option>
                     <option value="3">Hair</option>
@@ -218,17 +219,16 @@
 
           <div id="select2">
             <label for="day_select">Day Select</label> <br>
-            <table style="width: 600px;">
+            <table style="width: 700px;">
               <tr>
                 <td style="padding: 10px; ">
                   Code example:<br>
-                  <img src="./images/code/form_select2.png" alt="select code" />
+                  <img class="code_img" src="./images/code/form_select2.png" alt="select code" />
                 </td>
-                <td style="padding: 10px; width:200px;">
+                <td style="padding: 10px;">
                   Example: <br>
-
                   <select class="color_select" name="day_select" id="day_select">
-                    <option value="" selected>Days</option>
+                    <option value="0" selected>Days</option>
                     <option value="1">Monday</option>
                     <option value="2">Tuesday</option>
                     <option value="3">Wednesday</option>
@@ -237,39 +237,39 @@
                     <option value="6">Saturday</option>
                     <option value="7">Sunday</option>
                   </select>
-
                 </td>
               </tr>
             </table>
           </div>
-
-          <div id="form_inputs">
-            <div>
-              <label for="textfield">Text Field:</label> <br>
-              <input type="text" name="textfield" id="textfield">
-            </div>
-            <div>
-              <label for="email">Email:</label><br>
-              <input type="email" name="email" id="email">
-            </div>
-            <div>
-              <label for="password">Password:</label><br>
-              <input type="password" name="password" id="password">
-            </div>
-            <div>
-              <label for="url">Url:</label><br>
-              <input type="url" name="url" id="url">
-            </div>
+        </div>
+        <hr>
+        <div class="formcontainer" id="form_inputs">
+          <div>
+            <label for="textfield">Text Field:</label> <br>
+            <input type="text" name="textfield" id="textfield">
           </div>
-          <div id="form_checkbox">
-            <div>
-              <input type="checkbox" name="checkbox" id="checkbox">
-              <label for="checkbox">Checkbox </label>
-            </div>
-            <div>
-              <input type="radio" name="radio" id="radio" value="radio">
-              <label for="radio">Radio Button </label>
-            </div>
+          <div>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email">
+          </div>
+          <div>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password">
+          </div>
+          <div>
+            <label for="url">Url:</label><br>
+            <input type="url" name="url" id="url">
+          </div>
+        </div>
+        <hr>
+        <div class="formcontainer" id="form_checkbox">
+          <div>
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="checkbox">Checkbox </label>
+          </div>
+          <div>
+            <input type="radio" name="radio" id="radio" value="radio">
+            <label for="radio">Radio Button </label>
           </div>
         </div>
       </div>

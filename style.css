@@ -334,7 +334,7 @@ section {
 }
 
 .formcontainer {
-  margin: 10px;
+  margin: 10px 0px 150px 10px;
 }
 
 .cate_select {
@@ -372,6 +372,14 @@ section {
   height: 150px;
 }
 
+.code_img {
+  display: inline-block;
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 5px;
+}
 /* Content -  Notifications */
 
 /* Content -  Tables */
