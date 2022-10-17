@@ -23,7 +23,7 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
     <ion-icon class="logo" name="leaf-outline"></ion-icon>
@@ -79,7 +79,75 @@
           <h1 class="contentTitle">color</h1>
           <!-- Please write your code below this line -->
 
-          <p>Nara</p>
+          <h2>Brand color</h2>
+          <span class="colorCircle softGreen">
+            <p>
+              Soft Green <br />
+              #C8DBBE
+            </p>
+          </span>
+
+          <h2>Functional color</h2>
+          <div class="funcColorContainer">
+            <span class="colorCircle nightBlack">
+              <p>
+                Night Black <br />
+                #241C15
+              </p>
+            </span>
+            <span class="colorCircle coolBeige">
+              <p>
+                Cool Beige <br />
+                #B7A9A1
+              </p>
+            </span>
+            <span class="colorCircle warmGrey">
+              <p>
+                Warm Grey <br />
+                #8C8C8C
+              </p>
+            </span>
+            <span class="colorCircle darkGrey">
+              <p>
+                Dark Grey <br />
+                #332F2F
+              </p>
+            </span>
+            <span class="colorCircle darkWhite">
+              <p>
+                Dark White <br />
+                #DBD9D2
+              </p>
+            </span>
+            <span class="colorCircle cream">
+              <p>
+                Cream <br />
+                #EFEEEA
+              </p>
+            </span>
+          </div>
+
+          <h2>Feedback color</h2>
+          <div class="fedColorContainer">
+            <span class="colorCircle softPink">
+              <p>
+                Soft Pink <br />
+                #fBCFBD
+              </p>
+            </span>
+            <span class="colorCircle mellowGreen">
+              <p>
+                Mellow Green <br />
+                #D8EACC
+              </p>
+            </span>
+            <span class="colorCircle softYellow">
+              <p>
+                Soft Yellow <br />
+                #fBEECA
+              </p>
+            </span>
+          </div>
         </div>
 
         <div id="pagelayout" class="contentContainer">
@@ -93,8 +161,108 @@
           <h1 class="contentTitle">Data Visualization</h1>
           <!-- Please write your code below this line -->
 
-          <p>Jay</p>
-        </div>
+          <h2>Charts</h2>
+            <h3>Line chart</h3>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/line_normal.png"
+                />
+              </div>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/line_stack.png"
+                />
+              </div>
+            <p>Notes: Line charts show information that changes over time. 2017 - 2022.</p>
+
+            <h3>Bar chart</h3>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/bar_normal.png"
+                />
+              </div>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/bar_stack.png"
+                />
+              </div>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/bar_horizontal.png"
+                />
+              </div>
+            <p>Notes: Represent numerical values compared to each other. 
+              The length of the bar represents the value of each variable.</p>
+            
+            <h3>Single Value chart</h3>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/single_value_1.png"
+                />
+              </div>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/single_value_2.png"
+                />
+              </div>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/single_value_3.png"
+                />
+              </div>
+            <p>Notes: Represented form of our products. Each single values of 3 products.</p>
+
+            <h3>Area chart</h3>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/area.png"
+                />
+              </div>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/area_stack.png"
+                />
+              </div>
+            <p>Notes: A form of geospatial visualization, area maps are used to show specific values 
+              set over a map of a country, state, county, or any other geographic location.</p>
+            
+            <h3>Scatter Plot</h3>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/scatter_plot.png"
+                />
+              </div>
+            <p>Notes: Use the multiple colors to determine the color of the points.</p>
+            
+            <h3>Pie chart</h3>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/pie.png"
+                />
+              </div>
+            <p>Notes: A circular chart with triangular segments that shows data as a percentage of a whole.</p>
+            
+            <h3>Donut chart</h3>
+              <div id="chartContainer">
+                <img
+                  id="chart"
+                  src="./images/charts/donut.png"
+                />
+              </div>
+            <p>Notes: Show the relationship of parts to a whole.</p>
+          </div>
 
         <div id="button" class="contentContainer">
           <h1 class="contentTitle">button</h1>
@@ -126,16 +294,94 @@
 
         <div id="stat_data" class="contentContainer">
           <h1 class="contentTitle">stat/data</h1>
-          <!-- Please write your code below this line -->
+          <p class="statDataContentDesc">
+            The stat/data allows users to search and filter through displayed information.
+          </p>
+          <div class="row">
+            <div class="stat_data_group">
+              <h3 class="statDataTitle">Example</h3>
 
-          <p>Jay</p>
+              <div class="data_input_group">
+                <input name="sub-search" type="search" class="form-control">
+                <button class="btn-primary">
+                  <span class="btn-wrapper">
+                    <span class="btn-text">Go</span>
+                  </span>
+                </button>
+              </div>	
+
+              <div class="stat_input_group">
+                <select class="form-control">
+                  <option>data</option>
+                </select>
+              
+                <button class="btn-primary">
+                  <span class="btn-wrapper">
+                    <span class="btn-text">Go</span>
+                  </span>
+                </button>
+              </div>
+              
+              <h3 class="statDataTitle">Code Snippet</h3>
+
+              <div class="statDataContainer">
+                <img
+                  id="statData"
+                  src="./images/code/statData_jay.png"
+                  alt="statData code snippet"
+                />
+              </div>
+                <div class="statDataDescContainer">
+                  <h3 class="statDataTitle">
+                    <ion-icon name="mail-open-outline"></ion-icon>
+                    Note
+                  </h3>
+                </div>
+                <div>
+                  <p class="statDataContentDesc">
+                    This widget is designed for small data lists. There are no filter options 
+                    currently on this widget, so it is important to keep in mind how much data 
+                    will be displayed.
+                  </p>
+                </div>
+    
+            </div>
+          </div>	
         </div>
 
         <div id="dialogs" class="contentContainer">
           <h1 class="contentTitle">dialogs</h1>
           <!-- Please write your code below this line -->
+          <p class="dialogContentDesc">
+            We use modals and dialogs for a variety of different purposes
+            throughout the app including forms and verification prompts.
+          </p>
 
-          <p>Nara</p>
+          <div class="exampleContainer">
+            <h3 class="dialogTitle">Example</h3>
+            <button onclick="handleModal('open')">Open Modal window</button>
+          </div>
+
+          <h3 class="dialogTitle">Code Snippet</h3>
+
+          <div class="dialogContainer">
+            <img
+              src="./images/code/dialog_nara.png"
+              alt="dialog code snippet"
+            />
+            <div class="dialogDescContainer">
+              <h3 class="dialogTitle">
+                <ion-icon name="mail-open-outline"></ion-icon>
+                Note
+              </h3>
+              <p class="dialogContentDesc">
+                <code> handleModal()</code> function is triggered by
+                <code>onClick</code> event, and this function need to be passed
+                'open' or 'close' as a parameter to handle to show/hide the
+                modal
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

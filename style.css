@@ -207,7 +207,15 @@ width: 30%;
     /* Content -  Page Layout */
 
     /* Content -  Data Visualization */
-
+    #dataVisualization h2, h3 {
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    
+    #chart {
+      width: 600px;
+      height: 350px;
+    }
     /* Content -  Button */
 
     /* Content -  Form */
@@ -217,5 +225,33 @@ width: 30%;
     /* Content -  Tables */
 
     /* Content -  Stat/data */
-
+    #statData {
+      width: 550px;
+      height: 450px;
+    }
+    
+    .statDataContainer {
+      display: flex;
+    }
+    
+    .statDataContentDesc {
+      font-weight: 300;
+    }
+    
+    .statDataContainer {
+      padding: 10px;
+      width: 30%;
+      font-size: 20px;
+    }
+    
+    .statDataTitle {
+      text-transform: uppercase;
+      font-size: 23px;
+      font-weight: 300;
+      margin-top: 60px;
+    }
+    
+    .statDataDescContainer p {
+      font-size: 18px;
+    }
     /* Content -  Dialogs */
