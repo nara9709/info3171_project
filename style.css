@@ -290,6 +290,10 @@ section {
   width: 500px;
 }
 
+.pl_darkgray.large {
+  width: 720px;
+}
+
 .pl_darkgray.small p {
   color: #EFEEEA;
   font-size: small;
@@ -305,6 +309,42 @@ section {
   font-size: medium;
 }
 
+.pl_basic {
+  margin: 10px;
+  background-color: #EFEEEA;
+  padding: 20px;
+  align-items: center;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #241C15;
+}
+
+.pl_basic.small {
+  width: 250px;
+}
+
+.pl_basic.small p {
+  color: #241C15;
+  font-size: small;
+}
+
+.pl_basic.medium {
+  width: 500px;
+}
+
+.pl_basic.medium p {
+  color: #241C15;
+  font-size: small;
+}
+
+.pl_basic.large {
+  width: 700px;
+}
+
+.pl_basic.large p {
+  color: #241C15;
+  font-size: medium;
+}
 
 /* Content -  Data Visualization */
 
@@ -361,8 +401,8 @@ section {
 }
 
 .color_select option {
-  background: #D8EACC;
-  color: #332F2F;
+  background: #fBEECA;
+  color: #B7A9A1;
 }
 
 .textarea_code {
