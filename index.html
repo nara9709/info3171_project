@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+  <img class="logoImg" src="./images/starwing.png" href="index.html" width="20%" >
+  
+  <!-- Title -->
+  <section id="sec-title">
+
+
+    <h1 class="title">
+      <span class="titleAnime">Fly</span>
+      <span class="titleAnime">with</span>
+      <span class="titleAnime">your dream</span>
+      <br />
+      <br />
+      <span class="titleAnime">Star</span>
+      <span class="titleAnime">Wing</span>
+      <span class="titleAnime">Airline</span>
+    </h1>
+  </section>
+
+  <!-- Content -->
+  <section id="sec-content">
+    <!-- Content list -->
+    <div class="contentLeft">
+      <ul class="categoryList">
+        <li class="categoryTitle">
+          <h5>General</h5>
+        </li>
+        <li class="category" onclick="openPage('typography')">TypoGraphy</li>
+        <li class="category" onclick="openPage('color')">Color</li>
+        <li class="category" onclick="openPage('pagelayout')">Page Layout</li>
+        <li class="category" onclick="openPage('dataVisualization')">
+          Data Visualization
+        </li>
+
+        <li class="categoryTitle">
+          <h5>Elements</h5>
+        </li>
+        <li class="category" onclick="openPage('button')">Button</li>
+        <li class="category" onclick="openPage('form')">Form</li>
+        <li class="category" onclick="openPage('notifications')">
+          Notifications
+        </li>
+        <li class="category" onclick="openPage('tables')">Tables</li>
+        <li class="category" onclick="openPage('stat_data')">Stat/Data</li>
+        <li class="category" onclick="openPage('dialogs')">Dialogs</li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="contentRight">
+      <!-- Typography Start -->
+      <div id="typography" class="contentContainer active">
+        <h1 class="contentTitle">Typography</h1>
+        <p class="body-small">The guidelines of the typography pattern library</p>
+        <p class="body-small-bold">Define Font usage | Font | Font size | Font weight</p>
+        <hr />
+        <div class="container-1">
+          <ul ul-mg>
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text"><em>// Main title heading.</em></pre>
+                <pre
+                  class="font-info pre-text">1st level Heading   |   Cormorant Garamond   |   50px   |   Regular · bold</pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="heading-lg">This is Large Heading. </span>
+                  <span class="heading-lg-bold">This is Large Bold Heading.</span>
+                </p>
+              </div>
+            </li>
+            <hr />
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text2"><em>// Heading with grouped content.</em></pre>
+                <pre
+                  class="font-info pre-text">2nd level Heading   |   Cormorant Garamond   |   38px   |   Regular · bold</pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="heading-md">This is Medium Heading. </span>
+                  <span class="heading-md-bold">This is Medium Bold Heading.</span>
+                </p>
+              </div>
+            </li>
+            <hr />
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text2"><em>// Heading of each grouped content.</em></pre>
+                <pre
+                  class="font-info pre-text">3rd level heading   |   Cormorant Garamond   |   30px   |   Regular · bold</pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="heading-small">This is Small Heading. </span>
+                  <span class="heading-small-bold">This is Small Bold Heading.</span>
+                </p>
+              </div>
+            </li>
+            <hr />
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text2"><em>// Heading of a list in a content hierarchy.</em></pre>
+                <pre
+                  class="font-info pre-text">4rd level heading   |   Cormorant Garamond   |   24px   |   Regular · bold</pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="heading-xs">This is Extra Small Heading. </span>
+                  <span class="heading-xs-bold">This is Extra Small Bold Heading.</span>
+                </p>
+              </div>
+            </li>
+            <hr />
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text2"><em>// Main Heading.</em></pre>
+                <pre
+                  class="font-info pre-text">1st level Heading   |   Roboto   |   50px   |   Regular · Medium · bold</pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="body-lg">This is Large Heading. </span>
+                  <span class="body-lg-m">This is Large Medium Heading. </span>
+                  <span class="body-lg-bold">This is Large Bold Heading.</span>
+                </p>
+              </div>
+            </li>
+            <hr />
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text2"><em>// Text below subheading content.</em></pre>
+                <pre
+                  class="font-info pre-text">2nd level Heading   |   Roboto   |   36px   |   Regular · Medium · bold </pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="body-md">This is Medium Heading. </span>
+                  <span class="body-md-md">This is Md Medium Heading. </span>
+                  <span class="body-md-bold">This is Medium Bold Heading.</span>
+                </p>
+              </div>
+            </li>
+            <hr />
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text2"><em>// Text below minor heading content.</em></pre>
+                <pre
+                  class="font-info pre-text">1rd level Text   |   Roboto   |   22px   |   Regular · Medium · bold</pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="body-small">This is Small Text. </span>
+                  <span class="body-small-md">This is Small Medium Text. </span>
+                  <span class="body-small-bold">This is Small Bold Text.</span>
+                </p>
+              </div>
+            </li>
+            <hr />
+            <li class="row list-style">
+              <div class="portion pgClear">
+                <pre class="font-use pre-text2"><em>// Text of the basic paragraph.</em></pre>
+                <pre
+                  class="font-info pre-text">2rd level Text   |   Roboto   |   16px   |   Regular · Medium · bold</pre>
+              </div>
+              <div class="portion pgClear">
+                <p class="mg-narrow">
+                  <span class="body-xs">This is Extra Small Text. </span>
+                  <span class="body-xs-md">This is Extra Small Medium Text. </span>
+                  <span class="body-xs-bold">This is Extra Small Bold Text.</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+          <hr />
+        </div>
+        <p class="body-small-bold">EXAMPLE</p>
+        <hr />
+        <div class="container-1">
+          <p class="body-md-bold">'Roboto' Sub-heading</p>
+          <p class="body-xs line">Here is a paragraph. 'Roboto' is used as our company's default brand font. Roboto is
+            one of the simple and popular typefaces.</p>
+          <p class="body-small line">Here is a Lead paragraph. 'Roboto' is used as our company's default brand font.
+            Roboto is one of the simple and popular typefaces. </p>
+          <p class="heading-lg-bold">'Cormorant Garamond' Heading</p>
+          <ul>
+            <li class="body-xs-bold line-list">list 1 'Roboto' - FontWeight bold </li>
+            <li class="body-xs-md line-list">list 2 'Roboto' - FontWeight Medium</li>
+            <li class="body-xs line-list">list 3 'Roboto' - FontWeight Regular</li>
+          </ul>
+        </div>
+
+        <p class="body-small-bold">TYPEFACE & FONT STACK</p>
+        <hr />
+        <div class="container-1">
+          <div class="grid btweenSpace">
+            <p class="body-small-bold">Serif</p>
+            <p class="heading-small-bold mg-p">Cormorant Garamond</p>
+            <ul>
+              <li class="heading-xs mg-list">400 Regular</li>
+              <li class="heading-xs-i mg-list">400 Italic</li>
+              <li class="heading-xs-bold mg-list">700 Bold</li>
+              <li class="heading-xs-bold-i mg-list">700 Bold Italic</li>
+            </ul>
+          </div>
+
+          <div class="grid btweenSpace">
+            <p class="body-small-bold">Sans-serif</p>
+            <p class="body-small-md mg-p mg-t">Roboto</p>
+            <ul>
+              <li class="body-small mg-list">400 Regular</li>
+              <li class="body-small-i mg-list">400 Italic</li>
+              <li class="body-small-md mg-list">500 Medium</li>
+              <li class="body-small-md-i mg-list">500 Medium Italic</li>
+              <li class="body-small-bold mg-list">700 Bold</li>
+              <li class="body-small-bold-i mg-list">700 Bold Italic</li>
+            </ul>
+          </div>
+        </div>
+        <p class="body-small-bold mg-narrow-2">SYMBOL</p>
+        <hr />
+        <div class="container-1">
+          <table class="sample-table1">
+            <thead>
+              <tr>
+                <th class="body-xs-bold">Symbol</th>
+                <th class="body-xs-bold">Symbol Name</th>
+                <th class="body-xs-bold">Symbol</th>
+                <th class="body-xs-bold">Symbol Name</th>
+              </tr>
+              <thead>
+              <tbody>
+                <tr>
+                  <td>*</td>
+                  <td class="body-xs">Asterisk</td>
+                  <td>|</td>
+                  <td class="body-xs">Pipe</td>
+                </tr>
+                <tr>
+                  <td>™</td>
+                  <td class="body-xs">Trademark</td>
+                  <td>¦</td>
+                  <td class="body-xs">Broken bar</td>
+                </tr>
+                <tr>
+                  <td>®</td>
+                  <td class="body-xs">Registered trademark</td>
+                  <td>№</td>
+                  <td class="body-xs">Numero</td>
+                </tr>
+                <tr>
+                  <td>©</td>
+                  <td class="body-xs">Copyright</td>
+                  <td>&</td>
+                  <td class="body-xs">Ampersand / And</td>
+                </tr>
+                <tr>
+                  <td>※</td>
+                  <td class="body-xs">Reference Mark</td>
+                  <td>^</td>
+                  <td class="body-xs">Caret</td>
+                </tr>
+                <tr>
+                  <td>•</td>
+                  <td class="body-xs">Bullet</td>
+                  <td>_</td>
+                  <td class="body-xs">Underscore</td>
+                </tr>
+              </tbody>
+          </table>
+    </div>
+            <!--Typograhy end-->  
+  </div>
+
+
+          <!-- Color Start -->
+  <div id="color" class="contentContainer">
+            <h1 class="contentTitle">color</h1>
+            <!-- Please write your code below this line -->
+            <h2>Brand color</h2>
+            <span class="colorCircle softGreen">
+              <p>
+                Soft Green <br />
+                #C8DBBE
+              </p>
+            </span>
+  
+          <h2>Functional color</h2>
+          <div class="funcColorContainer">
+            <span class="colorCircle nightBlack">
+              <p>
+                Night Black <br />
+                #241C15
+              </p>
+            </span>
+            <span class="colorCircle coolBeige">
+              <p>
+                Cool Beige <br />
+                #B7A9A1
+              </p>
+            </span>
+            <span class="colorCircle warmGrey">
+              <p>
+                Warm Grey <br />
+                #8C8C8C
+              </p>
+            </span>
+            <span class="colorCircle darkGrey">
+              <p>
+                Dark Grey <br />
+                #332F2F
+              </p>
+            </span>
+            <span class="colorCircle darkWhite">
+              <p>
+                Dark White <br />
+                #DBD9D2
+              </p>
+            </span>
+            <span class="colorCircle cream">
+              <p>
+                Cream <br />
+                #EFEEEA
+              </p>
+            </span>
+          </div>
+  
+          <h2>Feedback color</h2>
+          <div class="fedColorContainer">
+            <span class="colorCircle softPink">
+              <p>
+                Soft Pink <br />
+                #fBCFBD
+              </p>
+            </span>
+            <span class="colorCircle mellowGreen">
+              <p>
+                Mellow Green <br />
+                #D8EACC
+              </p>
+            </span>
+            <span class="colorCircle softYellow">
+              <p>
+                Soft Yellow <br />
+                #fBEECA
+              </p>
+            </span>
+          </div>
+
+  </div>
+          <!-- Color End -->
+
+  <!-- Pagelayout Start -->
+      <div id="pagelayout" class="contentContainer">
+        <h1 class="contentTitle">page layout</h1>
+        <!-- Please write your code below this line -->
+        Page layout #1
+        <div class="pl_darkgray small">
+          <p>It is a narrow layout on a Dark Grey(#332F2F) background.</p>
+        </div>
+
+        Page layout #2
+        <div class="pl_darkgray medium">
+          <p>It is a medium layout on a Dark Grey(#332F2F) background.</p>
+        </div>
+
+        Page layout #3
+        <div class="pl_darkgray large">
+          <p>It is a large layout on a Dark Grey(#332F2F) background.</p>
+        </div>
+
+        Page layout #4
+        <div class="pl_basic small">
+          <p>It is a small layout on a basic- Cream (#EFEEEA) background.</p>
+        </div>
+
+
+        Page layout #5
+        <div class="pl_basic medium">
+          <p>It is a medium layout on a basic- Cream (#EFEEEA) background.</p>
+        </div>
+
+        Page layout #6
+        <div class="pl_basic large">
+          <p>It is a large layout on a basic- Cream (#EFEEEA) background.</p>
+        </div>
+      </div>
+  <!-- Pagelayout End -->
+
+  <!-- Data Visualization Start -->
+      <div id="dataVisualization" class="contentContainer">
+        <h1 class="contentTitle">Data Visualization</h1>
+        <h2>Charts</h2>
+        <h3>Line chart</h3>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/line_normal.png"
+            />
+          </div>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/line_stack.png"
+            />
+          </div>
+        <p>Notes: Line charts show information that changes over time. 2017 - 2022.</p>
+
+        <h3>Bar chart</h3>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/bar_normal.png"
+            />
+          </div>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/bar_stack.png"
+            />
+          </div>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/bar_horizontal.png"
+            />
+          </div>
+        <p>Notes: Represent numerical values compared to each other. 
+          The length of the bar represents the value of each variable.</p>
+        
+        <h3>Single Value chart</h3>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/single_value_1.png"
+            />
+          </div>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/single_value_2.png"
+            />
+          </div>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/single_value_3.png"
+            />
+          </div>
+        <p>Notes: Represented form of our products. Each single values of 3 products.</p>
+
+        <h3>Area chart</h3>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/area.png"
+            />
+          </div>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/area_stack.png"
+            />
+          </div>
+        <p>Notes: A form of geospatial visualization, area maps are used to show specific values 
+          set over a map of a country, state, county, or any other geographic location.</p>
+        
+        <h3>Scatter Plot</h3>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/scatter_plot.png"
+            />
+          </div>
+        <p>Notes: Use the multiple colors to determine the color of the points.</p>
+        
+        <h3>Pie chart</h3>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/pie.png"
+            />
+          </div>
+        <p>Notes: A circular chart with triangular segments that shows data as a percentage of a whole.</p>
+        
+        <h3>Donut chart</h3>
+          <div id="chartContainer">
+            <img
+              id="chart"
+              src="./images/charts/donut.png"
+            />
+          </div>
+        <p>Notes: Show the relationship of parts to a whole.</p>
+      </div>
+  <!-- Data Visualization End -->
+
+  <!-- Button Start -->
+      <div id="button" class="contentContainer">
+        <h1 class="contentTitle">button</h1>
+        <p class="buttonContentDesc">
+          Buttons can be applied to a variety of html nodes. Each variation has intention and should be used sparingly.
+        </p>
+        <!--Basic Button-->
+        <div class="basicButtonExampleContainer">
+          <h2  class="buttonType">Basic</h2>
+          <h3 class="buttonTitle">Examples</h3>
+          <button class="buttonDefault">Default</button>
+          <button class="buttonImportant">Important</button>
+          <button class="buttonCaution">Caution</button>
+        </div>
+
+        <h3 class="buttonTitle">Code Snippet</h3>
+
+        <div class="buttonContainer">
+          <img
+            src="./images/code/button1_EY.png"
+            alt="Basic button code snippet"
+          />
+          <div class="buttonDescContainer">
+            <h3 class="buttonTitle">
+              <ion-icon name="mail-open-outline"></ion-icon>
+              Note
+            </h3>
+            <p class="buttonContentDesc">
+              You can create buttons using the button 
+              HTML tag accompanied by the button class.
+              To style an anchor (a) tag as a button
+              use the button class.
+            </p>
+          </div>
+        </div>
+        <!--Disabled Button-->
+        <div class="buttonExampleContainer">
+          <h2 class="buttonType">Disabled</h2>
+          <h3 class="buttonTitle">Examples</h3>
+          <button class="disabledButtonDefault" disabled>Default</button>
+          <button class="disabledButtonImportant" disabled>Important</button>
+          <button class="disabledButtonCaution" disabled>Caution</button>
+        </div>
+
+        <h3 class="buttonTitle">Code Snippet</h3>
+
+        <div class="buttonContainer">
+          <img
+            src="./images/code/button2_EY.png"
+            alt="Disabled button code snippet"
+          />
+          <div class="buttonDescContainer">
+            <h3 class="buttonTitle">
+              <ion-icon name="mail-open-outline"></ion-icon>
+              Note
+            </h3>
+            <p class="buttonContentDesc">
+              In most situations we recommend using 
+              the semantic disabled attribute for
+              appropriate HTML elements. 
+              If needed there is a companion 
+              disabled utility class.
+            </p>
+          </div>
+        </div>
+
+         <!--Loading Button-->
+         <div class="loadingButtonExampleContainer">
+          <h2 class="buttonType">Loading</h2>
+          <h3 class="buttonTitle">Examples</h3>
+          <button class="buttonloadDefault">
+            <i class="fa fa-spinner fa-spin"></i> Default
+          </button>
+          <button class="buttonloadImportant">
+            <i class="fa fa-spinner fa-spin"></i> Important
+          </button>
+          <button class="buttonloadCaution">
+            <i class="fa fa-spinner fa-spin"></i> Caution
+          </button>
+        </div>
+
+        <h3 class="buttonTitle">Code Snippet</h3>
+
+        <div class="buttonContainer">
+          <img
+            src="./images/code/button3_EY.png"
+            alt="Loading button code snippet"
+          />
+          <div class="buttonDescContainer">
+            <h3 class="buttonTitle">
+              <ion-icon name="mail-open-outline"></ion-icon>
+              Note
+            </h3>
+            <p class="buttonContentDesc">
+              These buttons are used when we have
+              a time-intensive action on the page. 
+              We use them to provide feedback to the user
+              and let them know the action is in progress.
+            </p>
+          </div>
+        </div>
+      </div>
+  <!-- Button End -->
+
+  <!-- Form Start -->
+      <div id="form" class="contentContainer">
+        <h1 class="contentTitle">form</h1>
+        <!-- Please write your code below this line -->
+        <!--Navigation: Select, Inputs, Checkbox&radio-->
+        <div class="formnav">
+          <ul class="formnav ul">
+            <li><a href="#form_select">Select</a></li>
+            <li><a href="#form_inputs">Inputs</a></li>
+            <li><a href="#form_checkbox">Checkbox &amp; Radio</a></li>
+          </ul>
+          <hr>
+        </div>
+
+        <!--Contents-->
+        <div class="formcontainer" id="form_select">
+          <div id="select1">
+            <label for="cate_select">Category Select</label> <br>
+            <table style="width: 700px; margin-bottom: 30px;">
+              <tr>
+                <td style="padding: 10px; ">
+                  Code example:<br>
+                  <img class="code_img" src="./images/code/form_select1.png" alt="select code" />
+                </td>
+                <td style="padding: 10px; ">
+                  Example: <br>
+                  <select class="cate_select" name="cate_select" id="cate_select">
+                    <option value="0">Select Category</option>
+                    <option value="1">Facial</option>
+                    <option value="2">Body</option>
+                    <option value="3">Hair</option>
+                    <option value="4">Baby</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="select2">
+            <label for="day_select">Day Select</label> <br>
+            <table style="width: 700px;">
+              <tr>
+                <td style="padding: 10px; ">
+                  Code example:<br>
+                  <img class="code_img" src="./images/code/form_select2.png" alt="select code" />
+                </td>
+                <td style="padding: 10px;">
+                  Example: <br>
+                  <select class="color_select" name="day_select" id="day_select">
+                    <option value="0" selected>Days</option>
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                    <option value="6">Saturday</option>
+                    <option value="7">Sunday</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <hr>
+        <div class="formcontainer" id="form_inputs">
+          <div>
+            <label for="textfield">Text Field</label> <br>
+            <table style="padding: 10px;">
+              <tr>
+                <td>Code example:<br>
+                  <img class="code_img" src="./images/code/form_textfield.png" alt="checkbox code" />
+                </td>
+                <td style="padding: 10px;">
+                  Example: <br><br>
+                  <div>
+                    Input your ID:<br>
+                    <input type="text" name="textfield" id="textfield" placeholder="Input ID">
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <label for="email">Email</label><br>
+            <table style="padding: 10px;">
+              <tr>
+                <td>Code example:<br>
+                  <img class="code_img" src="./images/code/form_email.png" alt="checkbox code" />
+                </td>
+                <td style="padding: 10px;">
+                  Example: <br><br>
+                  <div>
+                    Input your Email:<br>
+                    <input type="email" name="email" id="email" value="example@email.com">
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <label for="password">Password</label><br>
+            <table style="padding: 10px;">
+              <tr>
+                <td>Code example:<br>
+                  <img class="code_img" src="./images/code/form_password.png" alt="checkbox code" />
+                </td>
+                <td style="padding: 10px;">
+                  Example: <br><br>
+                  <div>
+                    Input your Password:<br>
+                    <input type="password" name="password" id="password" value="123456789">
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <label for="url">Url</label><br>
+            <table style="padding: 10px;">
+              <tr>
+                <td>Code example:<br>
+                  <img class="code_img" src="./images/code/form_url.png" alt="checkbox code" />
+                </td>
+                <td style="padding: 10px;">
+                  Example: <br><br>
+                  <div>
+                    Add your homepage:<br>
+                    <input type="url" name="url" id="url" value="http://www.google.ca">
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <hr>
+        <div class="formcontainer" id="form_checkbox">
+          Checkbox <br>
+          <table style="padding: 10px;">
+            <tr>
+              <td>Code example:<br>
+                <img class="code_img" src="./images/code/form_checkbox.png" alt="checkbox code" />
+              </td>
+              <td style="padding: 10px;">
+                Example: <br>
+                <div>
+                  <input type="checkbox" id="chk1" name="chk1">
+                  <label for="chk1"> Checkbox1</label><br>
+                  <input type="checkbox" id="chk2" name="chk2">
+                  <label for="chk2"> Checkbox2</label><br>
+                  <input type="checkbox" id="chk3" name="chk3">
+                  <label for="chk3"> Checkbox3</label><br>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          Radio <br>
+          <table style="padding: 10px;">
+            <tr>
+              <td>Code example:<br>
+                <img class="code_img" src="./images/code/form_radio.png" alt="checkbox code" />
+              </td>
+              <td style="padding: 10px;">
+                Example: <br>
+                <div>
+                  <input type="radio" name="radio" id="radio1" value="radio1">
+                  <label for="radio">Radio Button1 </label> <br>
+                  <input type="radio" name="radio" id="radio2" value="radio2">
+                  <label for="radio">Radio Button2 </label> <br>
+                  <input type="radio" name="radio" id="radio3" value="radio3">
+                  <label for="radio">Radio Button3 </label> <br>
+                </div>
+              </td>
+            </tr>
+          </table>
+          
+        </div>
+      </div>
+      <!-- Form End --> 
+
+
+      <!--Notifications start-->
+      <div id="notifications" class="contentContainer">
+        <h1 class="contentTitle">notifications</h1>
+        <!--Inline Notifications-->
+        <div class="notificationExampleContainer">
+          <h2  class="notificationType">Inline Notifications</h2>
+          <p class="notificationContentDesc">
+            Inline notifications are used to notify a user of the status of an action during a task flow. 
+            It is recommended that inline notifications are shown at the top of the main content area.
+          </p>
+          <h3 class="notificationTitle">Examples</h3>
+        </div>
+
+        <div class="alert-success">
+          <span class="icon"><ion-icon name="checkmark-circle-outline"></ion-icon></span>
+          <strong>Good!</strong> This is working out.
+        </div>
+
+        <div class="alert-info">
+          <span><ion-icon name="alert-circle-outline"></ion-icon></span>
+          <strong>This is some general information.</strong> You should <a href="#" class="alert-link">know about this</a>.
+        </div>
+
+        <div class="alert-warning">
+          <span><ion-icon name="close-circle-outline"></ion-icon></span>
+          <strong>There is a problem!</strong> Someting terrible happened <a href="#" class="alert-link">View Details</a>.
+        </div>
+
+        <h3 class="notificationTitle">Code Snippet</h3>
+
+        <div class="notificationContainer">
+          <img
+            src="./images/code/inlineNotification_EY.png"
+            alt="Inline notification code snippet"
+          />
+          <div class="notificationDescContainer">
+            <h3 class="notificationTitle">
+              <ion-icon name="mail-open-outline"></ion-icon>
+              Note
+            </h3>
+            <p class="notificationContentDesc">
+              Inline notifications are categorized into four types based on severity: </br></br>
+              <strong>Success:</strong> indicates that an action processed successfully or that there are no issues. The success notification uses green color.</br>
+              <strong>Warning or Info:</strong> provides general information or indicates that an action failed at this time.  Use the yellow background color.</br>
+              <strong>Error:</strong>indicates that an action failed completely. Use the error class for the red background color.</br></br>
+              *Link (optional): Show a link to allow the user to navigate to details of the message.
+            </p>
+          </div>
+        </div>
+
+        <!--Notification badge-->
+        <div class="notificationExampleContainer">
+          <h2  class="notificationType">Notification badge</h2>
+          <p class="notificationContentDesc">
+            Notifications badge are intended to be used as a visible indicator to alert the user about incoming notifications. 
+            And They are typically used to provide additional context to components already on the page.
+          </p>
+          <h3 class="notificationTitle">Examples</h3>
+        </div>
+
+        <div class="notificationBadge">
+          <button
+            class="badgeBell"
+            type="button"
+            aria-label="notifications_count">
+            <span class="icon">
+              <ion-icon name="notifications-outline"></ion-icon>
+              <span class="badge_count"></span>
+            </span>
+          </button>
+          <button
+            class="badgeCart"
+            type="button"
+            aria-label="notifications_count">
+            <span class="icon">
+              <ion-icon name="cart-outline"></ion-icon>
+              <span class="badge_count">2</span>
+            </span>
+          </button>
+          <button
+            class="badgeWishlist"
+            type="button"
+            aria-label="notifications_count">
+            <span class="icon">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span class="badge_count">5</span>
+            </span>
+          </button>
+          <span class="badgeNew">New</span>
+          <span class="badgeBest">Best</span>
+        </div>
+
+        <h3 class="notificationTitle">Code Snippet</h3>
+
+        <div class="notificationContainer">
+          <img
+            src="./images/code/notificationBadge_EY.png"
+            alt="Notification badge code snippet"
+          />
+          <div class="notificationDescContainer">
+            <h3 class="notificationTitle">
+              <ion-icon name="mail-open-outline"></ion-icon>
+              Note
+            </h3>
+            <p class="notificationContentDesc">
+              Clicking the icon (or anywhere within the badge) will toggle the notification drawer open and closed.</br>
+              *Count (optional): When used, the count field will indicate the number of notifications.</br></br>
+              The "new" and "best" badges are available in addition to the new and best-selling product's images.
+            </p>
+          </div>
+        </div>
+      </div>
+        <!-- Notifications End -->
+
+   <!--table Start-->
+   <div id="tables" class="contentContainer">
+    <h1 class="contentTitle">tables</h1>
+    <p class="body-small-bold">Responsive table Example</p>
+    <div class="container-1">
+      <div style="overflow-x:auto;" class="fixHead">
+        <table class="sample-table1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>User Name</th>
+              <th>City</th>
+              <th>Postal Code</th>
+              <th>Province</th>
+              <th>Country</th>
+              <th>Note1</th>
+              <th>Note2</th>
+              <th>Note3</th>
+              <th>Note4</th>
+              <th>Note5</th>
+              <th>Note6</th>
+              <th>Note7</th>
+              
+            </tr>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>Svetlana</td>
+            <td>Tatev</td>
+            <td>#Svetlana</td>
+            <td>London</td>
+            <td>N6E 2B2</td>
+            <td>Ontario</td>
+            <td>Canada</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Taguhi</td>
+            <td>Yeva</td>
+            <td>#Taguhi</td>
+            <td>London</td>
+            <td>N6E 2Z3</td>
+            <td>Ontario</td>
+            <td>Canada</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Anna</td>
+            <td>Arax</td>
+            <td>#Anna</td>
+            <td>Toronto</td>
+            <td>M4M 1B5</td>
+            <td>Ontario</td>
+            <td>Canada</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Taguhi</td>
+            <td>Yeva</td>
+            <td>#Taguhi</td>
+            <td>London</td>
+            <td>N6E 2Z3</td>
+            <td>Ontario</td>
+            <td>Canada</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="container-1">
+      <div class="grid btweenSpace">
+        <img src="./src/table_code.png" alt="table-code">
+      </div>
+      <div class="grid btweenSpace">
+        <p class="body-small note-color">Note</p>
+        <p class="body-xs-md line">If the table width is larger than the screen, the <em>table</em> is scrolled
+          horizontally. Also, if the table height is greater than 300px, it will scroll vertically.
+          <em><strong>Thread</strong></em> tag is fixed, so it doesn't move when you scroll down.</p>
+        <p class="body-xs line">CSS information of the table is specified in the properties of
+          <em><strong>div</strong></em>, <em><strong>table</strong></em>, <em><strong>thread</strong></em>,
+          <em><strong>tr</strong></em> and, <em><strong>th</strong></em> tag. </p>
+        <p class="body-xs line">If you do not want to use both horizontal and vertical scrolling, delete the
+          <em>overflow-x:auto</em> property of <em><strong>div</strong></em> style and delete the class overflow
+          property of the same <em><strong>div</strong></em> tag as well.</p>
+      </div>
+    </div>
+    <hr />
+    <p class="body-small-bold">Table Template</p>
+    <div class="container-1">
+      <div class="grid btweenSpace">
+        <table class="sample-table2">
+          <thead>
+            <tr class="th-color2">
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>User Name</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>Svetlana</td>
+            <td>Tatev</td>
+            <td>#Svetlana</td>
+          </tr>
+          <tr class="table-color2">
+            <td>2</td>
+            <td>Taguhi</td>
+            <td>Yeva</td>
+            <td>#Taguhi</td>
+
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Anna</td>
+            <td>Arax</td>
+            <td>#Anna</td>
+          </tr>
+
+          <tr class="table-color2">
+            <td>4</td>
+            <td>Taguhi</td>
+            <td>Yeva</td>
+            <td>#Taguhi</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="grid btweenSpace">
+        <table class="sample-table3">
+          <thead>
+            <tr class="table-td3">
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>User Name</th>
+            </tr>
+          </thead>
+          <tr class="table-td3-1">
+            <td>1</td>
+            <td>Svetlana</td>
+            <td>Tatev</td>
+            <td>#Svetlana</td>
+          </tr>
+          <tr class="table-color2">
+            <td>2</td>
+            <td>Taguhi</td>
+            <td>Yeva</td>
+            <td>#Taguhi</td>
+
+          </tr>
+          <tr class="table-td3-1">
+            <td>3</td>
+            <td>Anna</td>
+            <td>Arax</td>
+            <td>#Anna</td>
+          </tr>
+
+          <tr class="table-color2">
+            <td>4</td>
+            <td>Taguhi</td>
+            <td>Yeva</td>
+            <td>#Taguhi</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <hr />
+    <p class="body-small-bold">Table with element</p>
+    <div class="container-1">
+      <table class="sample-table3">
+        <thead>
+          <tr class="table-td3">
+            <th>Button</th>
+            <th>Checkbox</th>
+            <th>URLs</th>
+          </tr>
+        </thead>
+        <tr class="table-td3-1">
+          <td><button class="buttonDefault">Default</button>
+          </td>
+          <td><input type="checkbox" style="text-align:center;"><input type="checkbox" style="text-align:center;" checked></td>
+          <td><a href="https://www.google.com">Google (Absolute)</a></a></td>
+        </tr>
+        <tr class="table-color2">
+          <td>Buttons cannot be placed on a <em><strong>thread</strong></em>.
+            Can be placed in any cell except
+            <em><strong>thread</em></strong>.
+          </td>
+          <td>The checkbox style in the table is specified separately.
+            <strong>ex) td input[type="checkbox"]</strong>
+          </td>
+          <td>Both relative and absolute URLs are available.
+          </td>
+      </table>
+    </div>
+    <hr />
+    <div class="container-1">
+      <div class="grid btweenSpace">
+        <p class="body-small note-color">Note</p>
+        <p class="body-xs-md line">Multiple checkboxes or buttons can be placed in one cell as needed.
+          When specifying CSS, you must use <em><strong>inline</strong></em> or <em><strong>inline-block</strong></em> for the display of input elements to place more than one checkbox or button in one cell.
+        <p class="body-xs line">If you have a word you want to emphasize, you can place <em>em tag</em>,  <strong>strong tag</strong> between the words to partially change the font thickness and inclination.
+        <p class="body-xs line">Depending on the table class, different table properties can be specified. The class of the table used is <em><strong>sample-table3</strong></em>.
+        </p>
+      </div>
+      <div class="grid btweenSpace">
+        <img src="./src/table-element.png" alt="table-element">
+      </div>
+    </div>
+  </div>
+  <!--table end-->  
+
+  <!-- Stat/Data Start -->
+  <div id="stat_data" class="contentContainer">
+    <h1 class="contentTitle">stat/data</h1>
+    <p class="statDataContentDesc">
+      The stat/data allows users to search and filter through displayed information.
+    </p>
+    <div class="row">
+      <div class="stat_data_group">
+        <h3 class="statDataTitle">Example</h3>
+
+        <div class="data_input_group">
+          <input name="sub-search" type="search" class="form-control">
+          <button class="btn-primary">
+            <span class="btn-wrapper">
+              <span class="btn-text">Go</span>
+            </span>
+          </button>
+        </div>	
+
+        <div class="stat_input_group">
+          <select class="form-control">
+            <option>data</option>
+          </select>
+        
+          <button class="btn-primary">
+            <span class="btn-wrapper">
+              <span class="btn-text">Go</span>
+            </span>
+          </button>
+        </div>
+        
+        <h3 class="statDataTitle">Code Snippet</h3>
+
+        <div class="statDataContainer">
+          <img
+            id="statData"
+            src="./images/code/statData_jay.png"
+            alt="statData code snippet"
+          />
+        </div>
+          <div class="statDataDescContainer">
+            <h3 class="statDataTitle">
+              <ion-icon name="mail-open-outline"></ion-icon>
+              Note
+            </h3>
+          </div>
+          <div>
+            <p class="statDataContentDesc">
+              This widget is designed for small data lists. There are no filter options 
+              currently on this widget, so it is important to keep in mind how much data 
+              will be displayed.
+            </p>
+          </div>
+
+      </div>
+    </div>	
+  </div>
+    <!-- Stat/Data Start -->
+
+    <!-- Dialogs Start -->
+      <div id="dialogs" class="contentContainer">
+        <h1 class="contentTitle">dialogs</h1>
+        <!-- Please write your code below this line -->
+
+        <p class="dialogContentDesc">
+          We use modals and dialogs for a variety of different purposes
+          throughout the app including forms and verification prompts.
+        </p>
+
+        <div class="exampleContainer">
+          <h3 class="dialogTitle">Example</h3>
+          <button onclick="handleModal('open')">Open Modal window</button>
+        </div>
+
+        <p>Nara</p>
+        <h3 class="dialogTitle">Code Snippet</h3>
+
+        <div class="dialogContainer">
+          <img
+            src="./images/code/dialog_nara.png"
+            alt="dialog code snippet"
+          />
+          <div class="dialogDescContainer">
+            <h3 class="dialogTitle">
+              <ion-icon name="mail-open-outline"></ion-icon>
+              Note
+            </h3>
+            <p class="dialogContentDesc">
+              <code> handleModal()</code> function is triggered by
+              <code>onClick</code> event, and this function need to be passed
+              'open' or 'close' as a parameter to handle to show/hide the
+              modal
+            </p>
+          </div>
+        </div>
+      </div>
+    <!-- Dialogs Start -->
+    </div>
+  </div>
+  </section>
+
+  <!-- Modal Window -->
+  <div id="modalWindow" class="modalWindow hidden">
+    <h2 class="modalTitle">Are you sure?</h2>
+    <p>This item will be deleted from your cart</p>
+    <div class="modalBtnContainer">
+      <button class="modalDelBtn" onclick="handleModal('close')">
+        Delete
+      </button>
+      <button class="modalCanBtn" onclick="handleModal('close')">
+        Cancel
+      </button>
+    </div>
+  </div>
+
+      </div>
+  </body>
+</body>
+</html>
