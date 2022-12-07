@@ -18,7 +18,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- Load d3.js -->
-    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
     <script src="main.js" defer></script>
 
 </head>
@@ -437,11 +437,33 @@
         <div id="chart3">
           <h2>Chart3: Number of Satisfactory levels by category
           </h2>
+          <select id="selectButton"></select>
           <script>
           //  D3.js code here
-          d3.csv("http://localhost:8080/customer_satisfaction.csv").then((data) => {
-  console.log(data);
-});
+
+
+          // set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+          d3.csv("./src/customer_satisfaction.csv", function(data) {
+         // List of groups (here I have one group per column)
+    let allGroup = d3.map(data, data => {
+      console.log(data)
+    }).keys();
+
+    console.log(allGroup)
+          })
           </script>
         </div>
 
@@ -878,7 +900,7 @@
 
         <div class="notificationContainer">
           <img
-            src="./images/code/notificationBadge_EY.png"
+            src=""
             alt="Notification badge code snippet"
           />
           <div class="notificationDescContainer">
