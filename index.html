@@ -17,7 +17,12 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
+  <script src="./src/d3_js_files/eunyeop.js"></script>
+  <script src="./src/d3_js_files/garam.js"></script>
+  <script src="./src/d3_js_files/jay.js"></script>
+  <script src="./src/d3_js_files/nara.js"></script>
+  <script src="./src/d3_js_files/minyoung.js"></script>
 </head>
 
 <body>
@@ -413,107 +418,53 @@
   <!-- Data Visualization Start -->
       <div id="dataVisualization" class="contentContainer">
         <h1 class="contentTitle">Data Visualization</h1>
-        <h2>Charts</h2>
-        <h3>Line chart</h3>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/line_normal.png"
-            />
-          </div>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/line_stack.png"
-            />
-          </div>
-        <p>Notes: Line charts show information that changes over time. 2017 - 2022.</p>
 
-        <h3>Bar chart</h3>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/bar_normal.png"
-            />
-          </div>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/bar_stack.png"
-            />
-          </div>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/bar_horizontal.png"
-            />
-          </div>
-        <p>Notes: Represent numerical values compared to each other. 
-          The length of the bar represents the value of each variable.</p>
-        
-        <h3>Single Value chart</h3>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/single_value_1.png"
-            />
-          </div>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/single_value_2.png"
-            />
-          </div>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/single_value_3.png"
-            />
-          </div>
-        <p>Notes: Represented form of our products. Each single values of 3 products.</p>
+        <!-- Please don't write your code outside of the div  -->
+        <div id="chart1">
+          <h2>Chart1: Distance by each customer</h2>
+        </div>
 
-        <h3>Area chart</h3>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/area.png"
-            />
-          </div>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/area_stack.png"
-            />
-          </div>
-        <p>Notes: A form of geospatial visualization, area maps are used to show specific values 
-          set over a map of a country, state, county, or any other geographic location.</p>
-        
-        <h3>Scatter Plot</h3>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/scatter_plot.png"
-            />
-          </div>
-        <p>Notes: Use the multiple colors to determine the color of the points.</p>
-        
-        <h3>Pie chart</h3>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/pie.png"
-            />
-          </div>
-        <p>Notes: A circular chart with triangular segments that shows data as a percentage of a whole.</p>
-        
-        <h3>Donut chart</h3>
-          <div id="chartContainer">
-            <img
-              id="chart"
-              src="./images/charts/donut.png"
-            />
-          </div>
-        <p>Notes: Show the relationship of parts to a whole.</p>
+        <div id="chart2">
+          <h2>Chart2: The proportion of Type of travel of customer responded
+          </h2>
+        </div>
+
+        <div id="chart3">
+          <h2>Chart3: Number of Satisfactory levels by category
+          </h2>
+        </div>
+
+        <div id="chart4">
+          <h2>Chart4: Relationship of Total Delay minutes and Departure/arrival time convenient satisfactory
+          </h2>
+        </div>
+
+        <div id="chart5">
+          <h2>Chart5: Average Satisfaction rate by Type of travel of customer
+          </h2>
+        </div>
+
+        <div id="chart6">
+          <h2>Chart6: The first 10 Loyal Customers’ 4 Ticket Prices
+          </h2>
+        </div>
+
+        <div id="chart7">
+          <h2>Chart7: Number of Loyal customers
+          </h2>
+        </div>
+
+        <div id="chart8">
+          <h2>Chart7: Number of Loyal customers
+          </h2>
+        </div>
+
+        <div id="chart9">
+          <h2>Chart9: Number of customers who did not experience any departure or arrival delays
+          </h2>
+        </div>
+
+     
       </div>
   <!-- Data Visualization End -->
 
