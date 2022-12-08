@@ -1215,3 +1215,27 @@ tbody tr:last-child {
   filter: blur(8px);
   pointer-events: none;
 }
+
+/* Chart 3 */
+.background-style {
+  background: #f1f2f3;
+}
+
+#chart3 {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+#chart3-select {
+  border: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+#chart3-select:focus {
+  outline: none;
+}
+
+.chart3-container rect {
+  fill: var(--fed-pink);
+}
