@@ -440,34 +440,35 @@
           <h3 id="chart3-title"></h3>
  
           <select id="chart3-select"  >
-            <option selected value="Inflight Wifi Service">Inflight wifi service</option>
-            <option value="food and drink">Food and drink</option>
-            <option value="seat comfort">Seat comfort</option>
-            <option value="inflight entertainment">Inflight entertainment</option>
-            <option value="leg room service">Leg room service</option>
+            <option selected value="Inflight wifi service">Inflight wifi service</option>
+            <option value="Food and drink">Food and drink</option>
+            <option value="Seat comfort">Seat comfort</option>
+            <option value="Inflight entertainment">Inflight entertainment</option>
+            <option value="Leg room service">Leg room service</option>
           </select>
 <div class="chart3-container">
   <svg ></svg> 
 </div>
 <script>
 
+  
   const drawChart = (selectedTitle , yData) => {
 
     // Add title
  let selectedOption = selectedTitle ? selectedTitle : 'Inflight Wifi Service';
   document.querySelector('#chart3-title').innerHTML = `Service point for <strong>${selectedOption}</strong>`
 
-var width = 700;
-var height = 300;
-var barWidth = 50;
-var padding = 5;
+let width = 700;
+let height = 300;
+let barWidth = 50;
+let padding = 5;
 
-var svg = d3.select('svg')
+let svg = d3.select('svg')
 .attr('width', width)
 .attr('height', height);
 
 // Draw bars
-    var group = svg.selectAll('g')
+    let group = svg.selectAll('g')
 .data(yData)
 .enter()
 .append('g')
@@ -491,7 +492,7 @@ group.append('text')
 })
 
   
-var xscale = d3.scaleBand()
+let xscale = d3.scaleBand()
 	.domain([1,2,3,4,5]
 	)
 	.rangeRound([0,width /2.5])
@@ -505,37 +506,35 @@ svg.append("g")
   }
 
 
-
-const getData = () => {
+const getData = async () => {
 
   let selectedTitle =  document.querySelector('#chart3-select').value;
-  
-  d3.csv("./src/chart3-nara.csv", function(data){ 
-  // Get data from csv file
- let filteredData = [];
 
- if(Object.values(data)[5] === `${selectedTitle}`) {
-  //  Push data only matched with selected option
-filteredData.push(data)
- } else {
-return
- }
+  let lawData = [];
 
- let yData =[];
- let xData = [];
+ await d3.csv("http://localhost:8888/customer_satisfaction.html", function(data){
+// Get CSV data from localhost server
+    Object.keys(data).map(item => {
+      // Filtering data by selected option 
+    if(item === `${selectedTitle}`){
+      // Add only mathced data
+    lawData.push(data[item]);
+    } else {
+      return;
+    }
+;
+    });
+    });
 
+// Counting for service point
+    const yData = [];
+lawData.map((x) => {
+  yData[x] = (yData[x] || 0) + 1;
+});
 
-for( let i = 0; i <5; i ++) {
-  let x = Object.keys(filteredData[0])[i];
-  let y = Object.values(filteredData[0])[i];
+yData.shift();
 
-  yData.push(Number(Object.values(filteredData[0])[i]));
-xData.push( Object.keys(filteredData[0])[i]);
-
-}
-drawChart(selectedTitle, yData);
-// End data 
-})
+drawChart(selectedTitle, yData)
 
 };
 
@@ -628,7 +627,7 @@ const onChange = () => {
 
         <div class="buttonContainer">
           <img
-            src="./images/code/button1_EY.png"
+            src=""
             alt="Basic button code snippet"
           />
           <div class="buttonDescContainer">
@@ -657,7 +656,7 @@ const onChange = () => {
 
         <div class="buttonContainer">
           <img
-            src="./images/code/button2_EY.png"
+            src=""
             alt="Disabled button code snippet"
           />
           <div class="buttonDescContainer">
@@ -694,7 +693,7 @@ const onChange = () => {
 
         <div class="buttonContainer">
           <img
-            src="./images/code/button3_EY.png"
+            src=""
             alt="Loading button code snippet"
           />
           <div class="buttonDescContainer">
@@ -926,7 +925,7 @@ const onChange = () => {
 
         <div class="notificationContainer">
           <img
-            src="./images/code/inlineNotification_EY.png"
+            src=""
             alt="Inline notification code snippet"
           />
           <div class="notificationDescContainer">
