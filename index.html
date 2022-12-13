@@ -512,7 +512,7 @@ const getData = async () => {
 
   let lawData = [];
 
- await d3.csv("http://localhost:8888/customer_satisfaction.html", function(data){
+ await d3.csv("http://localhost:8888/customer_satisfaction.csv", function(data){
 // Get CSV data from localhost server
     Object.keys(data).map(item => {
       // Filtering data by selected option 
@@ -521,8 +521,7 @@ const getData = async () => {
     lawData.push(data[item]);
     } else {
       return;
-    }
-;
+    };
     });
     });
 
