@@ -20,7 +20,23 @@
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v5.js"></script>
     <script src="main.js" defer></script>
+<style>
+      #chart1{
+      position: relative;
+     display: inline-block;
+    }
 
+    #chart2{
+      position: relative;
+      display: inline-block;
+    }
+
+    #chart4{
+      position: relative;
+      display: inline-block;
+    }
+
+</style>
 </head>
 
 <body>
@@ -418,21 +434,208 @@
         <h1 class="contentTitle">Data Visualization</h1>
 
         <!-- Please don't write your code outside of the div  -->
-        <div id="chart1">
-          <h2>Chart1: Distance by each customer</h2>
+        <h2>Chart1: Distance by each customer</h2>
+
+        <div id="chart1"> </div>
+
 
           <script>
-            //  D3.js code here
-          </script>
-        </div>
+          var svgwidth = 700;
+        var svgheight = 500;
+        var padding = 100;
 
-        <div id="chart2">
-          <h2>Chart2: The proportion of Type of travel of customer responded
+        var svg = d3.select("#chart1")
+                    .append('svg')
+                    .attr('width', svgwidth)
+                    .attr('height', svgheight);
+        
+        var inner_width = svgwidth - padding;
+        var inner_height = svgheight -padding;
+              
+        var g = svg.append("g")
+                .attr("transform", "translate(60, 50)")
+                .attr("class", "graph");
+
+        var tooltip1 = d3.select("#chart1")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .style("position", "absolute")
+        .style("background-color", "#C8DBBE")
+        .style("padding", "10px")
+        .style("font-size", "10px")
+        .style("text-align", "center")
+
+
+
+
+        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
+                        console.log(data);
+
+      
+          var xscale = d3.scaleLinear()
+          .domain([0, d3.max(data.map(d => parseInt(d.id)))])
+          .range([0, inner_width])
+
+            var xaxis = d3.axisBottom()
+                            .scale(xscale);
+
+                      g.append("g")
+                .attr("transform", "translate(0, " + inner_height + ")")
+                .call(xaxis)
+                .append('text')
+                .attr('x', inner_width/2)
+                .attr('y', 45)
+                .attr('fill', '#000')
+                .text('Customer ID')
+                .style('font-size', 13)
+
+        var yscale = d3.scaleLinear()
+        .domain([0, d3.max(data.map(d => parseInt(d['Flight Distance'])))])
+        .range([inner_height, 0]);
+
+
+            var yaxis = d3.axisLeft()
+                            .scale(yscale)
+            
+            g.append("g")
+                .call(yaxis)
+                .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -170)
+                .attr('y', -45)
+                .attr('fill', '#000')
+                .text('Flight Distance(km)')
+                .style('font-size', 13)
+
+
+            var generateLine = d3.line()
+
+            g.append("path")
+                .datum(data)
+                .attr("fill", "none")
+                .attr("stroke", "#000")
+                .attr("stroke-width", 1.3)
+                .attr("d", generateLine
+                    .x(function(d){return xscale(d.id)})
+                    .y(function(d){return yscale(d['Flight Distance']
+)})
+                )
+
+            g.append('g')
+            .selectAll("circle")
+                .data(data)
+                .join('circle')
+                    .attr("r", 5)
+                    .attr("cx", d => xscale(d.id) )
+                    .attr("cy", d => yscale(d['Flight Distance']))
+                    .style("fill", '#000')
+                    .on("mouseover", function(event, d) {
+                      tooltip1
+                      .transition()
+                      .duration(500)
+                      .style("opacity", .9)
+                      tooltip1.html(`customer ID : ${event.id} <br>Flight Distance : ${event['Flight Distance']} `)
+                      .style("left", d3.select(this).attr("cx") + "px")
+                      .style("top", d3.select(this).attr("cy") + "px")
+                    })
+                    .on("mouseout", function(d) {
+                      tooltip1.transition()
+                      .duration(500)
+                      .style("opacity", 0)
+                    })
+       })
+
+
+          </script>
+        <!--</div>-->
+        <h2>Chart2: The proportion of Type of travel of customer responded</h2>
+
+        <div id="chart2"></div>
+
+
             <script>
           //  D3.js code here
+
+
+          var svgwidth = 700;
+        var svgheight = 500;
+        var padding = 100;
+
+        
+        var svg = d3.select("#chart2")
+                    .append('svg')
+                    .attr('width', svgwidth)
+                    .attr('height', svgheight);
+        
+        var inner_width = svgwidth - padding;
+        var inner_height = svgheight -padding;
+
+        var g2 = svg.append("g")
+                    .attr("transform", "translate(60, 50)")
+                    .attr("class", "graph")
+        
+        var radius = Math.min(inner_width, inner_height) / 2;
+
+        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
+                        console.log(data);
+
+                        console.log(data['Type of Travel']); 
+                        console.log(data.id);
+                        console.log(data.map(d => parseInt(d.id)))
+                        console.log(data.map(d => d['Type of Travel']))
+                        
+
+var count1 = {};
+var type_of_travel = data.map(d => d['Type of Travel']);
+type_of_travel.forEach(function(i) { count1[i] = (count1[i]||0) + 1;});
+console.log(count1);
+
+
+        
+        var pie = d3.pie()
+                    .value(d => {
+                        return d[1];
+                    });
+        var arcGenerator = d3.arc()
+        .innerRadius(120)
+        .outerRadius(240)
+        .cornerRadius(10)
+
+        var arcs = d3.pie().padAngle(.05);
+
+        g2.selectAll('.graph')
+                .data(pie(Object.entries(count1)))
+                .join('path')
+                .attr('d',  arcGenerator)
+                .attr('transform', `translate(${inner_width/2}, ${inner_height/2})`)
+                .attr('fill', function(d,i){
+                        return d3.color("hsl(800, 20%, " + d.value + "%)");
+                            })
+
+        g2.append('g')
+        .attr('transform', `translate(${inner_width/2}, ${inner_height/2})`)
+          .selectAll('.graph')
+          .data(pie(Object.entries(count1)))
+          
+
+          .join('text')
+          .text(function(d){
+            return d.data[0] + " "+ d.data[1];
+          })
+          .attr("transform", function(d){
+            return `translate(${arcGenerator.centroid(d)})`
+          })
+          .style("font-size", 15)
+          .style("text-anchor", "middle")
+          .style("fill", "#86917c")
+          .style("background-color", "#bbc9af")
+          .style("font-weight", "bold" )
+          .style("text-shadow","3px #111, 3px #000")
+
+        })
+
           </script>
-          </h2>
-        </div>
 
         <div id="chart3">
           <h2>Chart3: Number of Satisfactory levels by category
@@ -467,13 +670,181 @@ var svg = d3.select("#my_dataviz")
           </script>
         </div>
 
-        <div id="chart4">
-          <h2>Chart4: Relationship of Total Delay minutes and Departure/arrival time convenient satisfactory
+        <h2>Chart4: Relationship of Total Delay minutes and Departure/arrival time convenient satisfactory</h2>
+
+        <div id="chart4"></div>
           <script>
           //  D3.js code here
-          </script>
-          </h2>
-        </div>
+          var svgwidth = 700;
+        var svgheight = 500;
+        var padding = 100;
+
+        var svg = d3.select("#chart4")
+                    .append('svg')
+                    .attr('width', svgwidth)
+                    .attr('height', svgheight);
+        
+        var inner_width = svgwidth - padding;
+        var inner_height = svgheight -padding;
+              
+        var g4 = svg.append("g")
+                .attr("transform", "translate(60, 50)")
+                .attr("class", "graph");
+
+        var tooltip = d3.select("#chart4")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .style("position", "absolute")
+        .style("background-color", "#C8DBBE")
+        .style("padding", "10px")
+        .style("font-size", "10px")
+        .style("text-align", "center")
+
+
+
+
+        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
+                        console.log(data);
+                        console.log(data.map(d => d['Average Satisfaction']))
+                        console.log(data.map(d => d['Total Departure and Arrival Delay in Minutes']))
+                        var count4 = {};
+
+                        var satisfaction_1 = data.map(d => d['satisfaction']);
+                      const set1 = new Set(satisfaction_1)
+
+          
+          var xscale = d3.scaleLinear()
+          .domain([0, d3.max(data.map(d => parseInt(d.id)))])
+          .range([0, inner_width])
+
+            var xaxis = d3.axisBottom()
+                            .scale(xscale);
+
+                      g4.append("g")
+                .attr("transform", "translate(0, " + inner_height + ")")
+                .call(xaxis)
+                .append('text')
+                .attr('x', inner_width/2)
+                .attr('y', 45)
+                .attr('fill', '#000')
+                .text('Customer ID')
+                .style('font-size', '12')
+
+
+        var yscale = d3.scaleLinear()
+       .domain([0, d3.max(data, d => parseInt(d['Total Departure and Arrival Delay in Minutes']))])
+        .range([inner_height, 0]);
+
+            var yaxis = d3.axisLeft()
+                            .scale(yscale)
+            
+            g4.append("g")
+                .call(yaxis)
+                .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -10)
+                .attr('y', -45)
+                .attr('fill', '#000')
+                .text('Total Delay minutes and Departure/arrival time convenient satisfactory')
+                .style('font-size', '12')
+
+            g4.append('g')
+            .selectAll("circle")
+                .data(data)
+                .join('circle')
+                    .attr("r", 4)
+                    .attr("cx", d => xscale(d.id) )
+                    .attr("cy", d => yscale(d['Total Departure and Arrival Delay in Minutes']))
+                    .style("fill", '#B7A9A1')
+                    
+       })
+        var g4 = svg.append("g")
+                .attr("transform", "translate(60, 50)")
+                .attr("class", "graph");
+
+        var tooltip = d3.select("#chart4")
+        .append("div")
+        .attr("class", "tooltip1")
+        .style("opacity", 0)
+        .style("position", "absolute")
+        .style("background-color", "#c2baff")
+        .style("padding", "10px")
+        .style("font-size", "10px")
+        .style("text-align", "center")
+
+
+
+
+        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
+                        console.log(data);
+                        console.log(data.map(d => d['Average Satisfaction']))
+                        console.log(data.map(d => d['Total Departure and Arrival Delay in Minutes']))
+
+      
+          var xscale = d3.scaleLinear()
+          .domain([0, d3.max(data.map(d => parseInt(d.id)))])
+          .range([0, inner_width])
+
+
+
+            var xaxis = d3.axisBottom()
+                            .scale(xscale);
+
+
+                      g4.append("g")
+                .attr("transform", "translate(0, " + inner_height + ")")
+                .call(xaxis)
+                //
+                .append('text')
+                .attr('x', inner_width/2)
+                .attr('y', 45)
+                .attr('fill', '#000')
+                .text('Customer ID')
+                .style('font-size', 12)
+
+
+        var yscale = d3.scaleLinear()
+       .domain([0, d3.max(data, d => parseInt(d['Departure/Arrival time convenient']))])
+        .range([inner_height, 0]);
+
+
+            var yaxis = d3.axisRight()
+                            .scale(yscale)
+            
+            g4.append("g")
+                .call(yaxis)
+                .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -110)
+                .attr('y', -45)
+                .attr('fill', '#000')
+
+
+            g4.append('g')
+            .selectAll("circle")
+                .data(data)
+                .join('circle')
+                    .attr("r", 4)
+                    .attr("cx", d => xscale(d.id) )
+                    .attr("cy", d => yscale(d['Departure/Arrival time convenient']))
+                    .style("fill", '#fab79b')
+                    .on("mouseover", function(event, d) {
+                      tooltip
+                      .transition()
+                      .duration(500)
+                      .style("opacity", .9)
+                      tooltip.html(`customer ID : ${event.id} <br>Departure/Arrival time convenient ${event['Departure/Arrival time convenient']} `)
+                      .style("left", d3.select(this).attr("cx") + "px")
+                      .style("top", d3.select(this).attr("cy") + "px")
+                    })
+                    .on("mouseout", function(d) {
+                      tooltip.transition()
+                      .duration(500)
+                      .style("opacity", 0)
+                    })
+       })
+      </script>
 
         <div id="chart5">
           <h2>Chart5: Average Satisfaction rate by Type of travel of customer
