@@ -469,8 +469,7 @@
 
 
 
-        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
-                        console.log(data);
+        d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
 
       
           var xscale = d3.scaleLinear()
@@ -577,19 +576,13 @@
         
         var radius = Math.min(inner_width, inner_height) / 2;
 
-        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
-                        console.log(data);
-
-                        console.log(data['Type of Travel']); 
-                        console.log(data.id);
-                        console.log(data.map(d => parseInt(d.id)))
-                        console.log(data.map(d => d['Type of Travel']))
-                        
+        d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
+           
 
 var count1 = {};
 var type_of_travel = data.map(d => d['Type of Travel']);
 type_of_travel.forEach(function(i) { count1[i] = (count1[i]||0) + 1;});
-console.log(count1);
+
 
 
         
@@ -790,10 +783,8 @@ const onChange = () => {
 
 
 
-        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
-                        console.log(data);
-                        console.log(data.map(d => d['Average Satisfaction']))
-                        console.log(data.map(d => d['Total Departure and Arrival Delay in Minutes']))
+        d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
+                    
                         var count4 = {};
 
                         var satisfaction_1 = data.map(d => d['satisfaction']);
@@ -862,10 +853,8 @@ const onChange = () => {
 
 
 
-        d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
-                        console.log(data);
-                        console.log(data.map(d => d['Average Satisfaction']))
-                        console.log(data.map(d => d['Total Departure and Arrival Delay in Minutes']))
+        d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
+                      
 
       
           var xscale = d3.scaleLinear()
