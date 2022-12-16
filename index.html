@@ -18,7 +18,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3.v7.js"></script>
     <script src="main.js" defer></script>
 <style>
       #chart1{
@@ -643,7 +643,7 @@ type_of_travel.forEach(function(i) { count1[i] = (count1[i]||0) + 1;});
             <option value="Leg room service">Leg room service</option>
           </select>
 <div class="chart3-container">
-  <svg ></svg> 
+  <svg id="chart3-svg" ></svg> 
 </div>
 <script>
   const drawChart = (selectedTitle , yData) => {
@@ -657,7 +657,7 @@ let height = 300;
 let barWidth = 50;
 let padding = 5;
 
-let svg = d3.select('svg')
+let svg = d3.select('#chart3-svg')
 .attr('width', width)
 .attr('height', height);
 
@@ -666,6 +666,7 @@ let svg = d3.select('svg')
 .data(yData)
 .enter()
 .append('g')
+.attr("class", "chart3-g")
 .attr('transform',function(d, i){
   return "translate(" + (barWidth + padding) * i + ", " + (height - d) + ")"
 });
@@ -742,7 +743,7 @@ window.onload = () => {
 
 const onChange = () => {
   // Remove previous chart data
-  d3.selectAll('g').remove();
+  d3.select("#chart3-svg").selectAll('g').remove();
   getData();
 }
 
@@ -921,22 +922,246 @@ const onChange = () => {
        })
       </script>
 
-        <div id="chart5">
-          <h2>Chart5: Average Satisfaction rate by Type of travel of customer
-          <script>
-          //  D3.js code here
-          </script>
-          </h2>
-        </div>
+   
+<h2>Chart5: Average Satisfaction rate by Type of travel of customer</h2>
+<p>Press the Travel Type button to display a graph</p>  
+<button onclick="update(BusinessTravel)" style="background-color: #DBD9D2; border-style: none; padding: 5px; border-radius: 5px;">
+  Business Travel</button>
+<button onclick="update(personalTravel)" style="background-color: #DBD9D2; border-style: none; border-style: none; padding: 5px; border-radius: 5px;">
+  Personal Travel</button>
+<div id="chart5"></div>      
+<script>
+  var BusinessTravel =[];
+  var personalTravel =[];
+    // Parse the Data
+    d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) {
+        for (var i=0; i<98; i++){
+            let newObj = {};
+            if(data[i]["Type of Travel"] == "Business travel"){
+                newObj = {"id":data[i]["id"], "averageSatisfaction": parseFloat(data[i]["Average Satisfaction"]) };
+                BusinessTravel.push(newObj);    
+            }else{
+                newObj = {"id":data[i]["id"], "averageSatisfaction": parseFloat(data[i]["Average Satisfaction"]) };
+                personalTravel.push(newObj);
+            }
+        }
+    }) 
 
-        <div id="chart6">
-          <h2>Chart6: The first 10 Loyal Customers’ 4 Ticket Prices
-          <script>
-          //  D3.js code here
-          </script>
-          </h2>
-        </div>
+    // set the dimensions and margins of the graph
+    var margin = {top: 40, right: 30, bottom: 50, left: 50};
+    var width = 480 - margin.left - margin.right;
+    var height = 430 - margin.top - margin.bottom;
+    var marginTop = 20;
 
+    // append the svg object to the body of the page
+    var svg = d3.select("#chart5")
+        .append("text")
+            .attr("x", (width/2))          
+            .attr("y", (height-20))
+            .attr("text-anchor", "middle")  
+            .style("font-size", "16px") 
+            .style("text-decoration", "underline")  
+            .text("Average Satisfaction rate by Type of travel of customer")  
+        .append("svg")
+        .attr('class', 'chart5-svg')
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)         
+        .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")")            
+    
+    // Initialise a X axis:
+    var x = d3.scaleLinear().range([0,width]);
+    var xAxis = d3.axisBottom().scale(x);
+    svg.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class","myXaxis")
+            
+    svg.append("text")
+      .attr("transform", "translate(" + (width/2) + " ," + (height+35) + ")")
+      .style("text-anchor", "middle")
+      .style("font-size", "12px") 
+      .text("Customer ID");             
+            
+
+    // Initialize an Y axis
+    var y = d3.scaleLinear().range([height, 0]);
+    var yAxis = d3.axisLeft().scale(y);
+    svg.append("g")
+    .attr("class","myYaxis")
+
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -(height/2))
+        .attr("y", -33)
+        .style("text-anchor", "middle")
+        .style("font-size", "12px") 
+        .text("Average Satisfaction Rate");
+
+    // Create a function that takes a dataset as input and update the plot:
+    function update(data) {
+
+    // Create the X axis:
+    x.domain([0, d3.max(data, function(d) { return d.id }) ]);
+    d3.select('.chart5-svg').selectAll(".myXaxis").transition()
+        .duration(3000)
+        .call(xAxis);
+
+    // create the Y axis
+    y.domain([0, d3.max(data, function(d) { return d.averageSatisfaction  }) ]);
+    d3.select('.chart5-svg').selectAll(".myYaxis")
+        .transition()
+        .duration(3000)
+        .call(yAxis);
+
+    // Create a update selection: bind to the new data
+    var u =     d3.select('.chart5-svg').selectAll(".lineTest")
+        .data([data], function(d){ return d.id });
+
+    // Updata the line
+    u
+        .enter()
+        .append("path")
+        .attr("class","lineTest")
+        .merge(u)
+        .transition()
+        .duration(3000)
+        .attr("d", d3.line()
+        .x(function(d) { return x(d.id); })
+        .y(function(d) { return y(d.averageSatisfaction); }))
+        .attr("fill", "none")
+        .attr("stroke", "#fBCFBD")
+        .attr("stroke-width", 3)
+    }
+
+    window.onload = () => {
+      getData()
+      update(BusinessTravel);
+    }
+</script>
+
+
+<h2>Chart6: The first 10 Loyal Customers’ 4 Ticket Prices</h2>
+<div id="chart6"></div>  
+<script>
+  // set the dimensions and margins of the graph
+  var margin = {top: 40, right: 150, bottom: 40, left: 70},
+      width = 600 - margin.left - margin.right,
+      height = 450 - margin.top - margin.bottom;
+
+  // append the svg object to the body of the page
+  var svg = d3.select("#chart6")
+    .append("text")
+          .attr("x", (width/2))          
+          .attr("y", height)
+          .attr("text-anchor", "middle")  
+          .style("font-size", "16px") 
+          .style("text-decoration", "underline")  
+          .text("The first 10 Loyal Customers’ 4 Ticket Prices") 
+    .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+  
+
+  var newArray =[];
+  // Parse the Data
+
+  d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) {
+      for (var i=0; i<12; i++){
+          let newObj = {};
+          if(data[i]["Customer Type"] == "Loyal Customer"){
+              newObj = {"id":data[i]["id"], 
+                  "firstPrice":parseInt(data[i]["1st Ticket Price"]), 
+                  "seconPrice": parseInt(data[i]["2nd Ticket Price"]), 
+                  "thirdPrice": parseInt(data[i]["3rd Ticket Price"]), 
+                  "fourthPrice": parseInt(data[i]["4th Ticket Price"]) };
+              newArray.push(newObj);    
+          }
+      }
+      console.log(newArray);
+  
+    // List of subgroups
+    var subgroups = ['firstPrice', 'seconPrice', 'thirdPrice', 'fourthPrice'];
+
+    // Add X axis
+    var x = d3.scaleBand()
+        .domain(d3.map(newArray, function(d){return(d.id)}))
+        .range([0, width])
+        .padding([0.2])
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).tickSizeOuter(0))
+
+    svg.append("text")
+    .attr("transform", "translate(" + (width/2) + " ," + (height+30) + ")")
+    .style("text-anchor", "middle")
+    .style("font-size", "12px") 
+    .text("Customer ID");    
+  
+    // Add Y axis
+    var y = d3.scaleLinear()
+      .domain([0, 4250])
+      .range([ height, 0 ]);
+    svg.append("g")
+      .call(d3.axisLeft(y))
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -(height/2))
+      .attr("y", -45)
+      .style("text-anchor", "middle")
+      .style("font-size", "12px") 
+      .text("ALoyal Customers’ 4 Ticket Prices");  
+  
+    // color palette = one color per subgroup
+    var color = d3.scaleOrdinal()
+      .domain(subgroups)
+      .range(['#DBD9D2','#fBCFBD','#D8EACC','#fBEECA'])
+  
+    //stack the data? --> stack per subgroup
+    var stackedData = d3.stack()
+      .keys(subgroups)(newArray)
+      
+    console.log(stackedData);
+    
+    // Show the bars
+      svg.append("g")
+        .selectAll("g")
+        // Enter in the stack data = loop key per key = group per group
+        .data(stackedData)
+        .enter().append("g")
+          .attr("fill", function(d) { return color(d.key); })
+          .selectAll("rect")
+          // enter a second time = loop subgroup per subgroup to add all rectangles
+          .data(function(d) { return d; })
+          .enter().append("rect")
+            .attr("x", function(d) { return x(d.data.id); })
+            .attr("y", function(d) { return y(d[1]); })
+            .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+            .attr("width",x.bandwidth())
+
+    //create leyend
+    var leyend = svg.append('g')
+              .selectAll('g')
+              .data(stackedData)
+              .join('g')
+                .attr("transform", (d, i) => `translate(${width + 20 }, ${i * 20 + margin.top})`)
+            
+        leyend.append('rect')
+              .attr("width", 10)
+              .attr("height", 10)
+              .attr('fill', d => color(d.key))
+            
+        leyend.append('text')
+              .attr("x", 20)
+              .attr("y", 10)
+              .html(d => d.key)       
+          
+  })
+</script>
         <div id="chart7">
           <h2>Chart7: Number of Loyal customers
           <script>
