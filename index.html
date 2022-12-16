@@ -439,12 +439,12 @@
         <div id="chart1"> </div>
 
 
-          <script>
+        <script>
           var svgwidth = 700;
         var svgheight = 500;
         var padding = 100;
-
-        var svg = d3.select("#chart1")
+      
+        var svg3 = d3.select("#chart1")
                     .append('svg')
                     .attr('width', svgwidth)
                     .attr('height', svgheight);
@@ -452,10 +452,10 @@
         var inner_width = svgwidth - padding;
         var inner_height = svgheight -padding;
               
-        var g = svg.append("g")
+        var g = svg3.append("g")
                 .attr("transform", "translate(60, 50)")
                 .attr("class", "graph");
-
+      
         var tooltip1 = d3.select("#chart1")
         .append("div")
         .attr("class", "tooltip")
@@ -465,20 +465,20 @@
         .style("padding", "10px")
         .style("font-size", "10px")
         .style("text-align", "center")
-
-
-
-
+      
+      
+      
+      
         d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
-
+      
       
           var xscale = d3.scaleLinear()
           .domain([0, d3.max(data.map(d => parseInt(d.id)))])
           .range([0, inner_width])
-
+      
             var xaxis = d3.axisBottom()
                             .scale(xscale);
-
+      
                       g.append("g")
                 .attr("transform", "translate(0, " + inner_height + ")")
                 .call(xaxis)
@@ -488,12 +488,12 @@
                 .attr('fill', '#000')
                 .text('Customer ID')
                 .style('font-size', 13)
-
+      
         var yscale = d3.scaleLinear()
         .domain([0, d3.max(data.map(d => parseInt(d['Flight Distance'])))])
         .range([inner_height, 0]);
-
-
+      
+      
             var yaxis = d3.axisLeft()
                             .scale(yscale)
             
@@ -506,10 +506,10 @@
                 .attr('fill', '#000')
                 .text('Flight Distance(km)')
                 .style('font-size', 13)
-
-
+      
+      
             var generateLine = d3.line()
-
+      
             g.append("path")
                 .datum(data)
                 .attr("fill", "none")
@@ -518,9 +518,9 @@
                 .attr("d", generateLine
                     .x(function(d){return xscale(d.id)})
                     .y(function(d){return yscale(d['Flight Distance']
-)})
+      )})
                 )
-
+      
             g.append('g')
             .selectAll("circle")
                 .data(data)
@@ -544,8 +544,8 @@
                       .style("opacity", 0)
                     })
        })
-
-
+      
+      
           </script>
         <!--</div>-->
         <h2>Chart2: The proportion of Type of travel of customer responded</h2>
@@ -1047,13 +1047,14 @@ const onChange = () => {
 <h2>Chart6: The first 10 Loyal Customers’ 4 Ticket Prices</h2>
 <div id="chart6"></div>  
 <script>
+
   // set the dimensions and margins of the graph
   var margin = {top: 40, right: 150, bottom: 40, left: 70},
       width = 600 - margin.left - margin.right,
       height = 450 - margin.top - margin.bottom;
 
   // append the svg object to the body of the page
-  var svg = d3.select("#chart6")
+  var svg2 = d3.select("#chart6")
     .append("text")
           .attr("x", (width/2))          
           .attr("y", height)
@@ -1071,7 +1072,7 @@ const onChange = () => {
 
   var newArray =[];
   // Parse the Data
-
+ 
   d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) {
       for (var i=0; i<12; i++){
           let newObj = {};
@@ -1094,24 +1095,24 @@ const onChange = () => {
         .domain(d3.map(newArray, function(d){return(d.id)}))
         .range([0, width])
         .padding([0.2])
-    svg.append("g")
+    svg2.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x).tickSizeOuter(0))
 
-    svg.append("text")
-    .attr("transform", "translate(" + (width/2) + " ," + (height+30) + ")")
-    .style("text-anchor", "middle")
-    .style("font-size", "12px") 
-    .text("Customer ID");    
+    svg2.append("text")
+     .attr("transform", "translate(" + (width/2) + " ," + (height+30) + ")")
+     .style("text-anchor", "middle")
+     .style("font-size", "12px") 
+     .text("Customer ID");    
   
     // Add Y axis
     var y = d3.scaleLinear()
       .domain([0, 4250])
       .range([ height, 0 ]);
-    svg.append("g")
+    svg2.append("g")
       .call(d3.axisLeft(y))
     
-    svg.append("text")
+    svg2.append("text")
       .attr("transform", "rotate(-90)")
       .attr("x", -(height/2))
       .attr("y", -45)
@@ -1131,7 +1132,7 @@ const onChange = () => {
     console.log(stackedData);
     
     // Show the bars
-      svg.append("g")
+      svg2.append("g")
         .selectAll("g")
         // Enter in the stack data = loop key per key = group per group
         .data(stackedData)
@@ -1147,7 +1148,7 @@ const onChange = () => {
             .attr("width",x.bandwidth())
 
     //create leyend
-    var leyend = svg.append('g')
+    var leyend = svg2.append('g')
               .selectAll('g')
               .data(stackedData)
               .join('g')
@@ -1164,188 +1165,43 @@ const onChange = () => {
               .html(d => d.key)       
           
   })
-</script>
+  
+  </script>
+
 
 
 <h2>Chart7: Number of Loyal customers</h2>
         <div id="chart7"></div>
-            <script>
-              var svgwidth = 500;
-              var svgheight = 500;
-              var padding = 100;
-  
-              var svg = d3.select("#chart7")
-                          .append('svg')
-                          .attr('width', svgwidth)
-                          .attr('height', svgheight);
-          
-              var inner_width = svgwidth - padding;
-              var inner_height = svgheight - padding;
-  
-              var g = svg.append("g")
-                          .attr("transform", "translate(60, 50)")
-                          .attr("class", "graph")
-          
-              var radius = Math.min(inner_width, inner_height) / 2;
-  
-            d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
-                          
-              var customers = {};
-              var customerType = data.map(d => d['Customer Type']);
-              customerType.forEach(function(i) { 
-                customers[i] = (customers[i] || 0) + 1
-              });
-              console.log(customers);
-  
-              var color = d3.scaleOrdinal()
-                            .range(['#8FBC8F', '#556B2F']);
-              var pie = d3.pie()
-                          .value(d => {
-                              return d[1];
-                          });
-              var arcGenerator = d3.arc()
-                                  .innerRadius(0)
-                                  .outerRadius(radius)
-              g.selectAll('.graph')
-                  .data(pie(Object.entries(customers)))
-                  .join('path')
-                  .attr('d',  arcGenerator)
-                  .attr('transform', `translate(${inner_width/2}, ${inner_height/2})`)
-                  .attr('fill', function(d,i){
-                      return color(d.data[1])
-                    })
-                  .attr('stroke', 'black')
-                  .style('stroke-width', '1px')
-  
-  
-              g.append('g')
-                  .attr('transform', `translate(${inner_width/2}, ${inner_height/2})`)
-                  .selectAll('.graph')
-                  .data(pie(Object.entries(customers)))
-                  .join('text')
-                  .text(function(d){
-                    return d.data[0] + ": " 
-                          + d.data[1];
-                  })
-                  .attr("transform", function(d){
-                    return `translate(${arcGenerator.centroid(d)})`
-                  })
-                  .style("font-size", 17)
-                  .style("text-anchor", "middle")
-            }) 
-            </script>
-
-
-   <h2>Chart7: Number of Loyal customers</h2>
-          <div id="chart8"></div>
-            <script>
-              var svgwidth = 500;
-              var svgheight = 500;
-              var padding = 100;
-  
-              var svg = d3.select("#chart8")
-                          .append('svg')
-                          .attr('width', svgwidth)
-                          .attr('height', svgheight);
-          
-              var inner_width = svgwidth - padding;
-              var inner_height = svgheight - padding;
-  
-              var g = svg.append("g")
-                          .attr("transform", "translate(60, 50)")
-                          .attr("class", "graph")
-   
-                      svg.append("text") 
-                          .text("108,132")
-                          .attr("font-family" , "sans-serif")
-                          .attr("font-size" , "15px")
-                          .attr("fill" , "black")
-                          .attr("text-anchor", "middle")
-                          .attr("x", 260)
-                          .attr('y', 160)
-              
-              var xscale = d3.scaleBand()
-                              .range([0, inner_width])
-                              .padding([0.2])
-  
-              var yscale = d3.scaleLinear()
-                              .range([inner_height, 0])
-          
-            d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
-              
-              xscale.domain(['Total Number of Flight Distance']);
-  
-              yscale.domain([0, 150000])
-  
-              var xaxis = d3.axisBottom()
-                              .scale(xscale);
-  
-              g.append('g')
-                  .attr('transform', 'translate(0,' + inner_height + ")")
-                  .call(xaxis)
-                  .attr('x', inner_width/2)
-                  .attr('y', 20)
-                  .attr('stroke', '#000')
-  
-              var yaxis = d3.axisLeft()
-                              .scale(yscale)
-  
-              g.append('g')
-                  .call(yaxis)
-                  .append('text')
-                  .attr('transform', 'rotate(-90)')
-                  .attr('x', -10)
-                  .attr('y', -10)
-                  .attr('stroke', '#000')
-                  
-              var graph = g.selectAll(".graph")
-                          .data(data)
-                          .enter()
-                          .append('g')
-  
-                  graph.append("rect")
-                      .attr("class", "bar")
-                      .attr('x', function(d) { return xscale(['Total Number of Flight Distance'])})
-                      .attr('y', function(d) { return yscale(d3.sum(data.map(d => d['Flight Distance'])))})
-                      .attr('width', xscale.bandwidth())
-                      .attr('height', function(d) { return inner_height - yscale(d3.sum(data.map(d => d['Flight Distance'])))})
-                      .style('fill', function(d) { return '#8FBC8F' })
-  
-            })          
-            </script>
-          
-        <h2>Chart9: Number of customers who did not experience any departure or arrival delays</h2>
-        <div id="chart9"></div>
-          <script>
+        <script>
           var svgwidth = 500;
           var svgheight = 500;
           var padding = 100;
-
-          var svg = d3.select("#chart9")
+      
+          var svg4 = d3.select("#chart7")
                       .append('svg')
                       .attr('width', svgwidth)
                       .attr('height', svgheight);
-
+      
           var inner_width = svgwidth - padding;
           var inner_height = svgheight - padding;
-
-          var g = svg.append("g")
+      
+          var g7 = svg4.append("g")
                       .attr("transform", "translate(60, 50)")
                       .attr("class", "graph")
-
+      
           var radius = Math.min(inner_width, inner_height) / 2;
-
-          d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
-
-          var result = {};
-          var totalDelay = data.map(d => d['Total Departure and Arrival Delay in Minutes']);
-          totalDelay.forEach(function(i) { 
-            result[i] = (result[i] || 0 ) + 1
+      
+        d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
+                      
+          var customers = {};
+          var customerType = data.map(d => d['Customer Type']);
+          customerType.forEach(function(i) { 
+            customers[i] = (customers[i] || 0) + 1
           });
-          console.log(result);
-
+          console.log(customers);
+      
           var color = d3.scaleOrdinal()
-                        .range(['#8FBC8F', '#556B2F', '#556B2F', '#556B2F']);
+                        .range(['#B7A9A1', '#DBD9D2']);
           var pie = d3.pie()
                       .value(d => {
                           return d[1];
@@ -1353,7 +1209,153 @@ const onChange = () => {
           var arcGenerator = d3.arc()
                               .innerRadius(0)
                               .outerRadius(radius)
-          g.selectAll('.graph')
+          g7.selectAll('.graph')
+              .data(pie(Object.entries(customers)))
+              .join('path')
+              .attr('d',  arcGenerator)
+              .attr('transform', `translate(${inner_width/2}, ${inner_height/2})`)
+              .attr('fill', function(d,i){
+                  return color(d.data[1])
+                })
+              .attr('stroke', 'black')
+              .style('stroke-width', '1px')
+      
+      
+          g7.append('g')
+              .attr('transform', `translate(${inner_width/2}, ${inner_height/2})`)
+              .selectAll('.graph')
+              .data(pie(Object.entries(customers)))
+              .join('text')
+              .text(function(d){
+                return d.data[0] + ": " 
+                      + d.data[1];
+              })
+              .attr("transform", function(d){
+                return `translate(${arcGenerator.centroid(d)})`
+              })
+              .style("font-size", 17)
+              .style("text-anchor", "middle")
+        }) 
+        </script>
+
+   <h2>Chart8: Total number of flight distance</h2>
+          <div id="chart8"></div>
+          <script>
+            var svgwidth = 500;
+            var svgheight = 500;
+            var padding = 100;
+        
+            var svg8 = d3.select("#chart8")
+                        .append('svg')
+                        .attr('width', svgwidth)
+                        .attr('height', svgheight);
+        
+            var inner_width = svgwidth - padding;
+            var inner_height = svgheight - padding;
+        
+            var g8 = svg8.append("g")
+                        .attr("transform", "translate(60, 50)")
+                        .attr("class", "graph")
+        
+                    svg8.append("text") 
+                        .text("108,132")
+                        .attr("font-family" , "sans-serif")
+                        .attr("font-size" , "15px")
+                        .attr("fill" , "black")
+                        .attr("text-anchor", "middle")
+                        .attr("x", 260)
+                        .attr('y', 160)
+            
+            var xscale = d3.scaleBand()
+                            .range([0, inner_width])
+                            .padding([0.2])
+        
+            var yscale = d3.scaleLinear()
+                            .range([inner_height, 0])
+        
+          d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
+            
+            xscale.domain(['Total Number of Flight Distance']);
+        
+            yscale.domain([0, 150000])
+        
+            var xaxis = d3.axisBottom()
+                            .scale(xscale);
+        
+            g8.append('g')
+                .attr('transform', 'translate(0,' + inner_height + ")")
+                .call(xaxis)
+                .attr('x', inner_width/2)
+                .attr('y', 20)
+                .attr('stroke', '#000')
+        
+            var yaxis = d3.axisLeft()
+                            .scale(yscale)
+        
+            g8.append('g')
+                .call(yaxis)
+                .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -10)
+                .attr('y', -10)
+                .attr('stroke', '#000')
+                
+            var graph = g8.selectAll(".graph")
+                        .data(data)
+                        .enter()
+                        .append('g')
+        
+                graph.append("rect")
+                    .attr("class", "bar")
+                    .attr('x', function(d) { return xscale(['Total Number of Flight Distance'])})
+                    .attr('y', function(d) { return yscale(d3.sum(data.map(d => d['Flight Distance'])))})
+                    .attr('width', xscale.bandwidth())
+                    .attr('height', function(d) { return inner_height - yscale(d3.sum(data.map(d => d['Flight Distance'])))})
+                    .style('fill', function(d) { return '#8C8C8C' })
+        
+          })          
+          </script>
+          
+        <h2>Chart9: Number of customers who did not experience any departure or arrival delays</h2>
+        <div id="chart9"></div>
+        <script>
+          var svgwidth = 500;
+          var svgheight = 500;
+          var padding = 100;
+      
+          var svg9 = d3.select("#chart9")
+                      .append('svg')
+                      .attr('width', svgwidth)
+                      .attr('height', svgheight);
+      
+          var inner_width = svgwidth - padding;
+          var inner_height = svgheight - padding;
+      
+          var g9 = svg9.append("g")
+                      .attr("transform", "translate(60, 50)")
+                      .attr("class", "graph")
+      
+          var radius = Math.min(inner_width, inner_height) / 2;
+      
+          d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
+      
+          var result = {};
+          var totalDelay = data.map(d => d['Total Departure and Arrival Delay in Minutes']);
+          totalDelay.forEach(function(i) { 
+            result[i] = (result[i] || 0 ) + 1
+          });
+          console.log(result);
+      
+          var color = d3.scaleOrdinal()
+                        .range(['#C8DBBE', '#B7A9A1', '#8C8C8C', '#DBD9D2']);
+          var pie = d3.pie()
+                      .value(d => {
+                          return d[1];
+                      });
+          var arcGenerator = d3.arc()
+                              .innerRadius(0)
+                              .outerRadius(radius)
+          g9.selectAll('.graph')
               .data(pie(Object.entries(result)))
               .join('path')
               .attr('d', arcGenerator)
@@ -1363,9 +1365,9 @@ const onChange = () => {
                 })
               .attr('stroke', 'black')
               .style('stroke-width', '1px')
-
-
-          g.append('g')
+      
+      
+          g9.append('g')
               .attr('transform', `translate(${inner_width/2}, ${inner_height/2})`)
               .selectAll('.graph')
               .data(pie(Object.entries(result)))
