@@ -924,120 +924,123 @@ const onChange = () => {
 
    
 <h2>Chart5: Average Satisfaction rate by Type of travel of customer</h2>
-<p>Press the Travel Type button to display a graph</p>  
-<button onclick="update(BusinessTravel)" style="background-color: #DBD9D2; border-style: none; padding: 5px; border-radius: 5px;">
+<p style="color: salmon; font-weight: bold;">Press the Travel Type button to display a graph</p>  
+<button onclick="update(BusinessTravel)" style="background-color: #DBD9D2; border-style: none; padding: 7px; border-radius: 5px; margin-right: 13px;">
   Business Travel</button>
-<button onclick="update(personalTravel)" style="background-color: #DBD9D2; border-style: none; border-style: none; padding: 5px; border-radius: 5px;">
+<button onclick="update(personalTravel)" style="background-color: #DBD9D2; border-style: none; border-style: none; padding: 7px; border-radius: 5px;">
   Personal Travel</button>
 <div id="chart5"></div>      
 <script>
-  var BusinessTravel =[];
-  var personalTravel =[];
-    // Parse the Data
-    d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) {
-        for (var i=0; i<98; i++){
-            let newObj = {};
-            if(data[i]["Type of Travel"] == "Business travel"){
-                newObj = {"id":data[i]["id"], "averageSatisfaction": parseFloat(data[i]["Average Satisfaction"]) };
-                BusinessTravel.push(newObj);    
-            }else{
-                newObj = {"id":data[i]["id"], "averageSatisfaction": parseFloat(data[i]["Average Satisfaction"]) };
-                personalTravel.push(newObj);
-            }
+       var BusinessTravel =[];
+       var personalTravel =[];
+        // Parse the Data
+        d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) {
+                    for (var i=0; i<98; i++){
+                        let newObj = {};
+                        if(data[i]["Type of Travel"] == "Business travel"){
+                            newObj = {"id":data[i]["id"], "averageSatisfaction": parseFloat(data[i]["Average Satisfaction"]) };
+                            BusinessTravel.push(newObj);    
+                        }else{
+                            newObj = {"id":data[i]["id"], "averageSatisfaction": parseFloat(data[i]["Average Satisfaction"]) };
+                            personalTravel.push(newObj);
+                        }
+                    }
+                    console.log(BusinessTravel);
+                    console.log(personalTravel);
+        }) 
+
+
+        // set the dimensions and margins of the graph
+        var margin = {top: 40, right: 30, bottom: 50, left: 50};
+        var width = 480 - margin.left - margin.right;
+        var height = 430 - margin.top - margin.bottom;
+        var marginTop = 20;
+
+        // append the svg object to the body of the page
+        var svg1 = d3.select("#chart5")
+            .append("text")
+                .attr("x", (width/2))          
+                .attr("y", (height-20))
+                .attr("text-anchor", "middle")  
+                .style("font-size", "16px") 
+                .style("text-decoration", "underline")  
+                .text("Average Satisfaction rate by Type of travel of customer")  
+            .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)         
+            .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")")            
+        
+        // Initialise a X axis:
+        var x = d3.scaleLinear().range([0,width]);
+        var xAxis = d3.axisBottom().scale(x);
+        svg1.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .attr("class","myXaxis")
+                
+        svg1.append("text")
+           .attr("transform", "translate(" + (width/2) + " ," + (height+35) + ")")
+           .style("text-anchor", "middle")
+           .style("font-size", "12px") 
+           .text("Customer ID");             
+                
+
+        // Initialize an Y axis
+        var y = d3.scaleLinear().range([height, 0]);
+        var yAxis = d3.axisLeft().scale(y);
+        svg1.append("g")
+        .attr("class","myYaxis")
+
+        svg1.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -(height/2))
+            .attr("y", -33)
+            .style("text-anchor", "middle")
+            .style("font-size", "12px") 
+            .text("Average Satisfaction Rate");
+
+        // Create a function that takes a dataset as input and update the plot:
+        var update = function(data) {
+
+        // Create the X axis:
+        x.domain([0, d3.max(data, function(d) { return d.id }) ]);
+        svg1.selectAll(".myXaxis").transition()
+            .duration(3000)
+            .call(xAxis);
+
+        // create the Y axis
+        y.domain([0, d3.max(data, function(d) { return d.averageSatisfaction  }) ]);
+        svg1.selectAll(".myYaxis")
+            .transition()
+            .duration(3000)
+            .call(yAxis);
+
+        // Create a update selection: bind to the new data
+        var u = svg1.selectAll(".lineTest")
+            .data([data], function(d){ return d.id });
+
+        // Updata the line
+        u
+            .enter()
+            .append("path")
+            .attr("class","lineTest")
+            .merge(u)
+            .transition()
+            .duration(3000)
+            .attr("d", d3.line()
+            .x(function(d) { return x(d.id); })
+            .y(function(d) { return y(d.averageSatisfaction); }))
+            .attr("fill", "none")
+            .attr("stroke", "#fBCFBD")
+            .attr("stroke-width", 3)
         }
-    }) 
 
-    // set the dimensions and margins of the graph
-    var margin = {top: 40, right: 30, bottom: 50, left: 50};
-    var width = 480 - margin.left - margin.right;
-    var height = 430 - margin.top - margin.bottom;
-    var marginTop = 20;
-
-    // append the svg object to the body of the page
-    var svg = d3.select("#chart5")
-        .append("text")
-            .attr("x", (width/2))          
-            .attr("y", (height-20))
-            .attr("text-anchor", "middle")  
-            .style("font-size", "16px") 
-            .style("text-decoration", "underline")  
-            .text("Average Satisfaction rate by Type of travel of customer")  
-        .append("svg")
-        .attr('class', 'chart5-svg')
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)         
-        .append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")")            
-    
-    // Initialise a X axis:
-    var x = d3.scaleLinear().range([0,width]);
-    var xAxis = d3.axisBottom().scale(x);
-    svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .attr("class","myXaxis")
-            
-    svg.append("text")
-      .attr("transform", "translate(" + (width/2) + " ," + (height+35) + ")")
-      .style("text-anchor", "middle")
-      .style("font-size", "12px") 
-      .text("Customer ID");             
-            
-
-    // Initialize an Y axis
-    var y = d3.scaleLinear().range([height, 0]);
-    var yAxis = d3.axisLeft().scale(y);
-    svg.append("g")
-    .attr("class","myYaxis")
-
-    svg.append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("x", -(height/2))
-        .attr("y", -33)
-        .style("text-anchor", "middle")
-        .style("font-size", "12px") 
-        .text("Average Satisfaction Rate");
-
-    // Create a function that takes a dataset as input and update the plot:
-    function update(data) {
-
-    // Create the X axis:
-    x.domain([0, d3.max(data, function(d) { return d.id }) ]);
-    d3.select('.chart5-svg').selectAll(".myXaxis").transition()
-        .duration(3000)
-        .call(xAxis);
-
-    // create the Y axis
-    y.domain([0, d3.max(data, function(d) { return d.averageSatisfaction  }) ]);
-    d3.select('.chart5-svg').selectAll(".myYaxis")
-        .transition()
-        .duration(3000)
-        .call(yAxis);
-
-    // Create a update selection: bind to the new data
-    var u =     d3.select('.chart5-svg').selectAll(".lineTest")
-        .data([data], function(d){ return d.id });
-
-    // Updata the line
-    u
-        .enter()
-        .append("path")
-        .attr("class","lineTest")
-        .merge(u)
-        .transition()
-        .duration(3000)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.id); })
-        .y(function(d) { return y(d.averageSatisfaction); }))
-        .attr("fill", "none")
-        .attr("stroke", "#fBCFBD")
-        .attr("stroke-width", 3)
-    }
-
-    window.onload = () => {
-      getData()
-      update(BusinessTravel);
-    }
+        window.onload = () => {
+          getData()
+          update(BusinessTravel);
+        }
+        
 </script>
 
 
@@ -1162,8 +1165,10 @@ const onChange = () => {
           
   })
 </script>
-        <div id="chart7">
-          <h2>Chart7: Number of Loyal customers
+
+
+<h2>Chart7: Number of Loyal customers</h2>
+        <div id="chart7"></div>
             <script>
               var svgwidth = 500;
               var svgheight = 500;
@@ -1183,7 +1188,7 @@ const onChange = () => {
           
               var radius = Math.min(inner_width, inner_height) / 2;
   
-            d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
+            d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
                           
               var customers = {};
               var customerType = data.map(d => d['Customer Type']);
@@ -1229,11 +1234,10 @@ const onChange = () => {
                   .style("text-anchor", "middle")
             }) 
             </script>
-            </h2>
-          </div>
-  
-          <div id="chart8">
-            <h2>Chart7: Number of Loyal customers
+
+
+   <h2>Chart7: Number of Loyal customers</h2>
+          <div id="chart8"></div>
             <script>
               var svgwidth = 500;
               var svgheight = 500;
@@ -1267,7 +1271,7 @@ const onChange = () => {
               var yscale = d3.scaleLinear()
                               .range([inner_height, 0])
           
-            d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
+            d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
               
               xscale.domain(['Total Number of Flight Distance']);
   
@@ -1309,11 +1313,9 @@ const onChange = () => {
   
             })          
             </script>
-            </h2>
-          </div>
-
-        <div id="chart9">
-          <h2>Chart9: Number of customers who did not experience any departure or arrival delays
+          
+        <h2>Chart9: Number of customers who did not experience any departure or arrival delays</h2>
+        <div id="chart9"></div>
           <script>
           var svgwidth = 500;
           var svgheight = 500;
@@ -1333,7 +1335,7 @@ const onChange = () => {
 
           var radius = Math.min(inner_width, inner_height) / 2;
 
-          d3.csv("./src/customer_satisfaction.csv").then(function(data) { 
+          d3.csv("http://localhost:8888/customer_satisfaction.csv").then(function(data) { 
 
           var result = {};
           var totalDelay = data.map(d => d['Total Departure and Arrival Delay in Minutes']);
@@ -1383,10 +1385,6 @@ const onChange = () => {
               .style("text-anchor", "middle")
           })                  
           </script>
-          </h2>
-        </div>
-
-     
       </div>
   <!-- Data Visualization End -->
 
